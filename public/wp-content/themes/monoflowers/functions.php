@@ -290,6 +290,7 @@ function onemebel_register_services_cpt() {
 }
 add_action('init', 'onemebel_register_services_cpt');
 
+
 // --- Портфолио (работы) ---
 function onemebel_register_portfolio_cpt() {
     register_post_type('portfolio', [

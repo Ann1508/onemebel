@@ -109,17 +109,20 @@ $price_tabs = [
                         ?>
                         <tr class="prices__row">
                             <td class="prices__td"><?php the_title(); ?></td>
-                            <td class="prices__td prices__td--right"><?php echo esc_html($price_val ?: 'от 25'); ?></td>
+                            <td class="prices__td prices__td--right">
+                                <span class="prices__badge"><?php echo esc_html($price_val ?: 'от 25'); ?></span>
+                            </td>
                         </tr>
                         <?php endwhile; wp_reset_postdata();
                         else :
-                            // Заглушки
                             $sample_prices = [25, 100, 25, 25, 25, 100, 25, 25, 25, 100, 25];
                             foreach ($sample_prices as $sp) :
                         ?>
                         <tr class="prices__row">
                             <td class="prices__td">Кухонные уголки</td>
-                            <td class="prices__td prices__td--right">от <?php echo $sp; ?></td>
+                            <td class="prices__td prices__td--right">
+                                <span class="prices__badge">от <?php echo $sp; ?></span>
+                            </td>
                         </tr>
                         <?php endforeach; endif; ?>
                     </tbody>

@@ -40,20 +40,19 @@ $brands_list = !empty($brands) ? $brands : $brands_default;
 
             <!-- Правая колонка: бэджи + фото -->
             <div class="about__right">
-                <div class="about__badges">
-                    <?php foreach ($badges as $badge) : ?>
-                    <div class="about__badge">
-                        <span class="about__badge-icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="15" height="15" rx="3.5" stroke="#222" stroke-opacity="0.3"/>
-                            </svg>
-                        </span>
-                        <span class="about__badge-text"><?php echo esc_html($badge); ?></span>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-
                 <div class="about__image">
+                    <div class="about__badges">
+                        <?php foreach ($badges as $badge) : ?>
+                        <div class="about__badge">
+                            <span class="about__badge-icon">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.5" y="0.5" width="15" height="15" rx="3.5" stroke="#222" stroke-opacity="0.3"/>
+                                </svg>
+                            </span>
+                            <span class="about__badge-text"><?php echo esc_html($badge); ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
                     <img src="<?php echo $about_img_url; ?>" alt="О компании ONEMEBEL" class="about__img">
                 </div>
             </div>

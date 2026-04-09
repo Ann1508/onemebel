@@ -30,7 +30,7 @@ $advantages_default = [
 $advantages_list = !empty($advantages) ? $advantages : $advantages_default;
 
 $adv_image = get_field('advantages_image');
-$adv_img_url = $adv_image ? esc_url($adv_image['url']) : get_template_directory_uri() . '/img/advantages-sofa.jpg';
+$adv_img_url = $adv_image ? esc_url($adv_image['url']) : get_template_directory_uri() . '/assets/img/advantages-sofa.jpg';
 $adv_overlay_text = get_field('advantages_overlay_text') ?: 'Компания Rtmebel предлагает все виды услуг по перетяжке мягкой мебели в Минске. Мы приводим в порядок даже сильно изношенные предметы интерьера, а также предлагаем ряд преимуществ:';
 ?>
 

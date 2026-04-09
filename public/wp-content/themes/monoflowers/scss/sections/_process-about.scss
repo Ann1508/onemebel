@@ -26,6 +26,7 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
+        align-self: stretch; // растягивает левую колонку на всю высоту грида
     }
 
     &__title {
@@ -43,14 +44,17 @@
 
     &__cta {
         display: flex;
-        align-items: center;
+        align-items: flex-end; // картинка прижата к низу
         gap: 14px;
         padding: 12px 14px;
+        padding-top: 0; // убираем отступ сверху
         background-color: #f5f0ec;
         border-radius: 12px;
         text-decoration: none;
         transition: background-color 0.3s ease;
         max-width: 240px;
+        margin-top: auto;
+        overflow: visible; // чтобы картинка могла выходить за пределы
 
         &:hover {
             background-color: darken(#f5f0ec, 5%);
@@ -58,11 +62,12 @@
     }
 
     &__cta-img {
-        width: 52px;
-        height: 52px;
+        width: 80px;  // было 52px, увеличь
+        height: 80px;
         border-radius: 8px;
         overflow: hidden;
         flex-shrink: 0;
+        margin-top: -20px; // выносим картинку вверх за пределы блока
 
         img {
             width: 100%;
@@ -82,7 +87,7 @@
 
     &__cta-arrow {
         font-size: 20px;
-        color: $main-title-color;
+        color: $main-title-color; // тёмно-коричневый как на дизайне
         flex-shrink: 0;
     }
 
@@ -104,8 +109,8 @@
 
     &__step-header {
         display: flex;
-        align-items: baseline;
-        gap: 16px;
+        flex-direction: column; // было row, сделай column
+        gap: 4px;
         margin-bottom: 6px;
     }
 
@@ -114,7 +119,6 @@
         color: #aaa;
         font-weight: 400;
         white-space: nowrap;
-        flex-shrink: 0;
     }
 
     &__step-title {
@@ -129,7 +133,7 @@
         font-size: 13px;
         color: #777;
         line-height: 1.55;
-        margin: 0 0 0 42px; // отступ = ширина num + gap
+        margin: 0; // убери отступ слева, он больше не нужен
     }
 }
 
@@ -185,23 +189,29 @@
     &__right {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 0;
     }
 
     &__badges {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 8px;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 2;
     }
 
     &__badge {
         display: flex;
         align-items: center;
         gap: 8px;
-        background: #fff;
+        background: #fff; // белый фон
         border-radius: 20px;
-        padding: 10px 16px;
-        border: 1px solid #e5e5e5;
+        padding: 8px 14px;
+        border: none; // убери border
+        white-space: nowrap; // текст в одну строку
     }
 
     &__badge-icon {
@@ -212,15 +222,17 @@
 
     &__badge-text {
         font-family: $mainFont;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 500;
         color: $main-title-color;
+        white-space: nowrap;
     }
 
     &__image {
         border-radius: 16px;
         overflow: hidden;
         aspect-ratio: 4/3;
+        position: relative; // переноси position: relative сюда
     }
 
     &__img {
@@ -270,11 +282,11 @@
     &__item {
         background: #fff;
         border-radius: 10px;
-        aspect-ratio: 1.8/1;
+        aspect-ratio: 2/1; // было 1.8/1, чуть шире
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 12px;
+        padding: 16px; // было 12px
         transition: box-shadow 0.3s ease;
 
         &:hover {
@@ -284,7 +296,7 @@
 
     &__logo {
         max-width: 100%;
-        max-height: 48px;
+        max-height: 64px; // было 48px, увеличь
         object-fit: contain;
         filter: grayscale(100%);
         opacity: 0.7;

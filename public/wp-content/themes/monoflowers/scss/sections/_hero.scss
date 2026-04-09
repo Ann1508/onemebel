@@ -88,20 +88,20 @@
     &__button {
         display: inline-block;
         padding: 12px 24px;
-        border: 1px solid rgba(255, 255, 255, 0.7);
+        border: 2px solid rgba(255, 255, 255, 0.9);
         border-radius: 6px;
-        color: $white-color;
+        color: #634844;
+        background: rgb(255, 255, 255);
+        backdrop-filter: blur(4px);
         font-family: $mainFont;
         font-weight: 500;
         font-size: 15px;
         text-decoration: none;
         width: max-content;
         transition: all 0.3s ease;
-        background: transparent;
 
         &:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: $white-color;
+            background: rgba(255, 255, 255, 0.874);
         }
 
         @media screen and (max-width: $phoneWidth) {
@@ -112,50 +112,95 @@
 
     // --- Блок преимуществ под слайдером ---
     &__advantages {
-        background-color: rgba(0, 0, 0, 0.55);
-        padding: 18px 0;
-
-        // Если хочешь светлый фон — раскомментируй:
-        // background-color: #fff;
-        // border-top: 1px solid #eee;
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        padding: 0;
+        background: transparent;
+        z-index: 5;
     }
 
     &__advantages-grid {
         display: flex;
-        gap: 40px;
+        gap: 0;
         justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0 108px;
 
         @media screen and (max-width: $tableWidth) {
-            gap: 24px;
+            padding: 0 40px;
             flex-wrap: wrap;
+            gap: 12px;
         }
 
         @media screen and (max-width: $phoneWidth) {
+            padding: 0 24px;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
         }
     }
 
     &__advantage-item {
         display: flex;
-        flex-direction: row;
-        gap: 6px;
+        flex-direction: column;
+        gap: 4px;
         font-size: 13px;
         color: $white-color;
+        padding: 0 40px;
+        min-width: 200px;
+
+        &:not(:first-child) {
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
 
         @media screen and (max-width: $phoneWidth) {
             font-size: 12px;
+            padding: 0;
+            min-width: unset;
+
+            &:not(:first-child) {
+                border-left: none;
+            }
         }
     }
 
     &__advantage-label {
         font-weight: 700;
         white-space: nowrap;
+        font-size: 14px;
     }
 
     &__advantage-text {
         font-weight: 400;
-        opacity: 0.85;
+        opacity: 0.75;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    &__chair-image {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 2;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        display: none;
+    }
     }
 
     // Swiper pagination

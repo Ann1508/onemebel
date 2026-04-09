@@ -20,7 +20,7 @@ $has_items = $portfolio_query->have_posts();
 <section class="portfolio">
 
     <!-- Фоновое изображение-баннер (первые фото) -->
-    <div class="portfolio__banner">
+    <div class="portfolio__banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/portfolio-bg.jpg')">
         <div class="portfolio__banner-title">Наши<br>работы</div>
     </div>
 

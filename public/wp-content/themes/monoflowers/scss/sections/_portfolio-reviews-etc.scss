@@ -4,15 +4,26 @@
 
 .portfolio {
     position: relative;
-    background-color: $light-bg;
+    background-color: transparent;
 
-    // Фоновый баннер
+        &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 400px; // высота серого фона снизу
+        background-color: $light-bg;
+        z-index: 1;
+    }
+
     &__banner {
         position: relative;
         width: 100%;
-        height: 280px;
+        height: 480px;        
+        background-position: center 30%;
         background-color: #3a2a22;
-        background-image: url('../img/portfolio-bg.jpg'); // замените на реальное фото
+        background-image: url('../../assets/img/portfolio-bg.jpg');
         background-size: cover;
         background-position: center;
         display: flex;
@@ -20,7 +31,7 @@
         padding: 48px;
 
         @media screen and (max-width: $phoneWidth) {
-            height: 200px;
+            height: 220px;
             padding: 32px 20px;
         }
     }
@@ -38,23 +49,83 @@
     }
 
     &__grid-wrap {
-        background-color: $light-bg;
-        padding: 32px 0 70px;
+        background-color: transparent; // убираем фон
+        padding: 0 0 70px;
+        margin-top: -320px;
+        position: relative;
+        z-index: 2;
     }
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 200px;
-        gap: 12px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        .portfolio__item {
+            aspect-ratio: 1 / 1; // все карточки квадратные
+        }
+
+        // 1я — 2я колонка, 1я строка
+        .portfolio__item:nth-child(1) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        // 2я — 1я колонка, 2я строка
+        .portfolio__item:nth-child(2) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        // 3я — 3я колонка, 2я строка
+        .portfolio__item:nth-child(3) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        // 4я — 4я колонка, 2я строка
+        .portfolio__item:nth-child(4) {
+            grid-column: 4;
+            grid-row: 2;
+        }
+
+        // 5я — 2я колонка, 3я строка
+        .portfolio__item:nth-child(5) {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        // 6я — 3я колонка, 3я строка
+        .portfolio__item:nth-child(6) {
+            grid-column: 3;
+            grid-row: 3;
+        }
+
+        // 7я — 1я колонка, 4я строка
+        .portfolio__item:nth-child(7) {
+            grid-column: 1;
+            grid-row: 4;
+        }
+
+        // 8я — 2я колонка, 4я строка
+        .portfolio__item:nth-child(8) {
+            grid-column: 2;
+            grid-row: 4;
+        }
+
+        // Кнопка — 4я колонка, 4я строка
+        .portfolio__item--more {
+            grid-column: 4;
+            grid-row: 4;
+        }
 
         @media screen and (max-width: $tableWidth) {
             grid-template-columns: repeat(2, 1fr);
-        }
 
-        @media screen and (max-width: $phoneWidth) {
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: 140px;
+            .portfolio__item:nth-child(n) {
+                grid-column: auto;
+                grid-row: auto;
+            }
         }
     }
 
@@ -292,14 +363,20 @@
 
     &__overlay {
         position: absolute;
+        top: 0;      // было bottom: 0
         bottom: 0;
         left: 0;
         right: 0;
         padding: 28px;
-        background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-        color: #fff;
+        background: linear-gradient(
+            to top,
+            rgba(0,0,0,0.75) 0%,
+            rgba(0,0,0,0.3) 50%,
+            rgba(0,0,0,0.1) 100%
+        );
         display: flex;
         flex-direction: column;
+        justify-content: flex-end; // текст внизу
         gap: 10px;
     }
 
@@ -322,22 +399,18 @@
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 0;
+        justify-content: space-between; 
         background: #fff;
         border-radius: 20px;
-        padding: 12px 28px;
-
-        @media screen and (max-width: $phoneWidth) {
-            padding: 12px 16px;
-        }
+        padding: 8px 28px;
     }
 
     &__item {
         display: flex;
-        align-items: center;
+        align-items: flex-start; // было center
         justify-content: space-between;
         gap: 20px;
-        padding: 24px 0;
+        padding: 20px 0;
         border-bottom: 1px solid #f0f0f0;
 
         &:last-child {
@@ -368,22 +441,24 @@
     }
 
     &__item-icon {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
-        background-color: #f0ebe6;
+        background-color: $brown-color;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+        align-self: flex-start;
+        margin-top: 2px;
     }
 
     &__item-spinner {
         width: 18px;
         height: 18px;
-        border: 2px solid $brown-color;
+        border: 2px solid rgba(255,255,255,0.4); // светлый на тёмном фоне
         border-radius: 50%;
-        border-top-color: transparent;
+        border-top-color: #fff;
         animation: spin 1.5s linear infinite;
     }
 }
@@ -420,6 +495,7 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
+        align-self: stretch; // растягивает на всю высоту
     }
 
     &__title {
@@ -444,14 +520,17 @@
 
     &__cta {
         display: flex;
-        align-items: center;
+        align-items: flex-end; // картинка прижата к низу
         gap: 14px;
         padding: 12px 14px;
+        padding-top: 0; // убираем отступ сверху
         background-color: #f5f0ec;
         border-radius: 12px;
         text-decoration: none;
-        max-width: 240px;
         transition: background-color 0.3s ease;
+        max-width: 240px;
+        margin-top: auto;
+        overflow: visible; // чтобы картинка могла выходить за пределы
 
         &:hover {
             background-color: darken(#f5f0ec, 5%);
@@ -459,11 +538,12 @@
     }
 
     &__cta-img {
-        width: 52px;
-        height: 52px;
+        width: 80px;  // было 52px, увеличь
+        height: 80px;
         border-radius: 8px;
         overflow: hidden;
         flex-shrink: 0;
+        margin-top: -20px; // выносим картинку вверх за пределы блока
 
         img {
             width: 100%;
@@ -502,9 +582,16 @@
 
     &__step-header {
         display: flex;
-        align-items: baseline;
-        gap: 16px;
+        flex-direction: column; // номер сверху, заголовок снизу
+        gap: 4px;
         margin-bottom: 4px;
+    }
+
+    &__step-text {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.55;
+        margin: 0; // убери отступ слева
     }
 
     &__step-num {
@@ -522,12 +609,6 @@
         margin: 0;
     }
 
-    &__step-text {
-        font-size: 13px;
-        color: #777;
-        line-height: 1.55;
-        margin: 0 0 0 42px;
-    }
 }
 
 // =============================================

@@ -172,6 +172,7 @@
         line-height: 1.55;
         margin: 0;
         max-width: 320px;
+        margin-top: auto; // прижимает note и всё что после него вниз
     }
 
     &__cta {
@@ -195,44 +196,62 @@
     &__right {
         display: flex;
         flex-direction: column;
+        background: #f5f2ee;
+        border-radius: 16px;
+        padding: 24px 28px;
     }
 
     &__table {
         width: 100%;
         border-collapse: collapse;
+        border: none;
+
+        thead tr {
+            border-bottom: 1px solid #e0dbd5; // линия только снизу шапки
+        }
     }
 
     &__th {
         font-family: $mainFont;
-        font-size: 13px;
-        font-weight: 600;
-        color: #555;
+        font-size: 14px;
+        font-weight: 700;
+        color: $main-title-color;
         text-align: left;
-        padding: 0 0 12px;
-        border-bottom: 1px solid #eee;
-
-        &--right {
-            text-align: right;
-        }
+        padding: 0 0 14px;
+        border-bottom: 1px solid #e0dbd5;
+        border: none; // убираем все границы у th
     }
 
     &__row {
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid #e0dbd5; 
 
         &:last-child {
-            border-bottom: none;
+            border-bottom: none; 
         }
     }
 
     &__td {
+        font-family: $mainFont;
         font-size: 14px;
+        font-weight: 500;        // добавь 500 вместо дефолтного 400
         color: $main-title-color;
         padding: 12px 0;
+        border: none; // убирает все остальные контуры
 
         &--right {
             text-align: right;
-            color: #777;
         }
+    }
+
+    &__badge {
+        font-family: $mainFont;
+        font-weight: 500;
+        display: inline-block;
+        background: #ebe7e2;
+        border-radius: 20px;
+        padding: 3px 12px;
+        font-size: 13px;
+        color: $main-title-color;
     }
 
     &__show-more {

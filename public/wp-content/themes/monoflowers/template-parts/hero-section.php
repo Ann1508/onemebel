@@ -27,11 +27,48 @@
                             <?php echo $slide_button_text ? esc_html($slide_button_text) : 'Рассчитать стоимость'; ?>
                         </a>
                     </div>
+
+                    <?php 
+                    $chair_image = get_sub_field('slide_chair_image');
+                    if ($chair_image): ?>
+                    <div class="hero__chair-image">
+                        <img src="<?php echo esc_url($chair_image['url']); ?>" alt="Кресло">
+                    </div>
+                    <?php endif; ?>
+
                 </div>
                 <?php endwhile; ?>
             </div>
             
             <div class="hero-pagination swiper-pagination"></div>
+                <!-- Блок преимуществ внизу hero -->
+                <div class="hero__advantages">
+                    <div class="container">
+                        <div class="hero__advantages-grid">
+                            <?php
+                            $advantages = [
+                                [
+                                    'label' => 'Производство:',
+                                    'text'  => 'Собственная мастерская, опытные мастера'
+                                ],
+                                [
+                                    'label' => 'Материалы:',
+                                    'text'  => 'Износостойкие ткани и наполнители премиум-класса'
+                                ],
+                                [
+                                    'label' => 'Сервис:',
+                                    'text'  => 'Бережный вывоз, перетяжка и доставка под ключ'
+                                ],
+                            ];
+                            foreach ($advantages as $adv): ?>
+                            <div class="hero__advantage-item">
+                                <span class="hero__advantage-label"><?php echo esc_html($adv['label']); ?></span>
+                                <span class="hero__advantage-text"><?php echo esc_html($adv['text']); ?></span>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
         </div>
         <?php else: ?>
         <!-- Fallback если нет ACF слайдов -->
@@ -43,34 +80,5 @@
             </div>
         </div>
         <?php endif; ?>
-    </div>
-
-    <!-- Блок преимуществ внизу hero -->
-    <div class="hero__advantages">
-        <div class="container">
-            <div class="hero__advantages-grid">
-                <?php
-                $advantages = [
-                    [
-                        'label' => 'Производство:',
-                        'text'  => 'Собственная мастерская, опытные мастера'
-                    ],
-                    [
-                        'label' => 'Материалы:',
-                        'text'  => 'Износостойкие ткани и наполнители премиум-класса'
-                    ],
-                    [
-                        'label' => 'Сервис:',
-                        'text'  => 'Бережный вывоз, перетяжка и доставка под ключ'
-                    ],
-                ];
-                foreach ($advantages as $adv): ?>
-                <div class="hero__advantage-item">
-                    <span class="hero__advantage-label"><?php echo esc_html($adv['label']); ?></span>
-                    <span class="hero__advantage-text"><?php echo esc_html($adv['text']); ?></span>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
     </div>
 </section>
