@@ -1,0 +1,357 @@
+@import "./utils/vars";
+@import "./utils/mixins";
+@import "./utils/fonts";
+@import "./utils/reset";
+
+@import "header";
+@import "footer";
+@import "modal";
+@import "page-content";
+@import "error-page";
+
+@import "sections/hero";
+@import "sections/about";
+@import "sections/recommend";
+@import "sections/categories";
+@import "sections/subscription";
+@import "sections/custom-order";
+@import "sections/services";
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+  background: initial !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: $mainFontSize;
+  font-weight: 400;
+  background-color: #f2f2f2;
+  line-height: $mainLineHeight;
+  position: relative;
+  height: 100%;
+}
+
+.hero-bg-image {
+  background: url("/wp-content/themes/monoflowers/assets/img/background-img-head.png")
+    top / cover no-repeat;
+  background-size: 100%;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $default-color #fff;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $default-color;
+  border-radius: 20px;
+  border: 3px solid #fff;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fraunces", serif;
+  margin: 0;
+  color: inherit;
+
+  &::selection {
+    background-color: #262626;
+    color: #fbfbfb;
+  }
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+
+  &::selection {
+    background-color: #262626;
+    color: #fbfbfb;
+  }
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &::selection {
+    background-color: #262626;
+    color: #fbfbfb;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: #fff;
+  -webkit-text-fill-color: #121310;
+  -webkit-box-shadow: 0 0 0px 0px #121310 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+section,
+.section {
+  position: relative;
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+p::selection,
+span::selection {
+  background-color: #262626;
+  color: #fbfbfb;
+}
+
+.container {
+  position: relative;
+  width: 97%;
+  max-width: $desktopWidth;
+  margin: 0 auto;
+
+  @media screen and (max-width: $tableWidth) {
+    width: 92%;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    width: 90%;
+  }
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  background: $Primary;
+  border-radius: 8px;
+  color: $white-color;
+  cursor: pointer;
+  padding: 14px 89px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  width: max-content;
+
+  @media screen and (max-width: 710px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 330px) {
+    padding: 14px 10px;
+  }
+
+  &.btn-white {
+    background-color: $white-color;
+    color: $Primary;
+  }
+
+  &.icon {
+    padding: 11px 58px 11px 16px;
+
+    @media screen and (max-width: 710px) {
+      padding: 11px 16px;
+    }
+
+    @media screen and (max-width: 330px) {
+      padding: 5px;
+      font-size: 12px;
+    }
+  }
+
+  .icon-circle {
+    position: absolute;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: $Primary-Text;
+    border-radius: 20px;
+
+    @media screen and (max-width: 330px) {
+      width: 30px;
+      height: 30px;
+    }
+
+    svg {
+      path {
+        transition: 0.3s;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1169px) {
+    &:hover {
+      background: $white-color;
+      border: 1px solid $white-color;
+    }
+  }
+
+  &:active {
+    background: $white-color;
+  }
+
+  :focus {
+    background: $white-color;
+  }
+}
+
+.main-link {
+  color: $white-color;
+
+  @media screen and (min-width: 1169px) {
+    &:hover {
+      color: $Primary;
+    }
+  }
+}
+
+.main-title {
+  color: $main-title-color;
+  font-family: "Fraunces", serif;
+  font-size: rem(48);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 54px;
+  text-wrap: balance;
+
+  @media screen and (max-width: 1169px) {
+    font-size: rem(32);
+    line-height: 40px;
+  }
+
+  @media screen and (max-width: 710px) {
+    line-height: 32px;
+  }
+
+  &.white {
+    color: $white-color;
+  }
+}
+
+.main-text {
+  color: $main-text-color;
+  font-size: rem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%;
+  padding-top: rem(20);
+
+  &.thin {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  &.white {
+    color: $white-color;
+  }
+}
+
+.contain__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cover__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-family: sans-serif;
+  margin-bottom: 24px;
+  font-size: 16px;
+
+  @media (max-width: 710px) {
+    width: 100%;
+  }
+}
+
+table th,
+table td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+
+  @media (max-width: 710px) {
+    font-size: 12px;
+  }
+}
+
+table th {
+  font-weight: 600;
+}
+
+.grecaptcha-badge {
+  display: none !important;
+}

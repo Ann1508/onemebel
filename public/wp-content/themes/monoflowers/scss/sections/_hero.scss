@@ -1,0 +1,191 @@
+.hero {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0; // убираем нижний отступ — его даёт блок преимуществ
+
+    .container {
+        position: relative;
+    }
+
+    .hero-swiper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    &__slide {
+        position: relative;
+        width: 100%;
+        height: auto !important;
+        min-height: 500px;
+        max-height: 560px;
+        display: flex;
+        align-items: center;
+        padding: 100px 108px;
+
+        @media screen and (max-width: $phoneWidth) {
+            padding: 80px 24px;
+            min-height: 400px;
+        }
+    }
+
+    &__slide-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+        border-radius: 12px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.05) 100%);
+            border-radius: 12px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        max-width: 480px;
+        color: $white-color;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        @media screen and (max-width: $phoneWidth) {
+            max-width: 100%;
+            gap: 20px;
+        }
+    }
+
+    &__title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 1.15;
+        color: $white-color;
+        margin: 0;
+
+        @media screen and (max-width: $smDesktopWidth) {
+            font-size: 40px;
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 30px;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 12px 24px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 6px;
+        color: $white-color;
+        font-family: $mainFont;
+        font-weight: 500;
+        font-size: 15px;
+        text-decoration: none;
+        width: max-content;
+        transition: all 0.3s ease;
+        background: transparent;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: $white-color;
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    // --- Блок преимуществ под слайдером ---
+    &__advantages {
+        background-color: rgba(0, 0, 0, 0.55);
+        padding: 18px 0;
+
+        // Если хочешь светлый фон — раскомментируй:
+        // background-color: #fff;
+        // border-top: 1px solid #eee;
+    }
+
+    &__advantages-grid {
+        display: flex;
+        gap: 40px;
+        justify-content: flex-start;
+
+        @media screen and (max-width: $tableWidth) {
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
+
+    &__advantage-item {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        font-size: 13px;
+        color: $white-color;
+
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 12px;
+        }
+    }
+
+    &__advantage-label {
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    &__advantage-text {
+        font-weight: 400;
+        opacity: 0.85;
+    }
+
+    // Swiper pagination
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        gap: 4px;
+        width: auto;
+    }
+
+    .swiper-pagination-bullet {
+        width: 72px;
+        height: 2px;
+        background-color: rgba($white-color, 0.4);
+        border-radius: 1px;
+        opacity: 1;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &-active {
+            background-color: $white-color;
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+            width: 40px;
+        }
+    }
+}

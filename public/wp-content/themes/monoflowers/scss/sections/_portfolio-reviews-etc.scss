@@ -1,0 +1,632 @@
+// =============================================
+// Секция: Наши работы (Портфолио)
+// =============================================
+
+.portfolio {
+    position: relative;
+    background-color: $light-bg;
+
+    // Фоновый баннер
+    &__banner {
+        position: relative;
+        width: 100%;
+        height: 280px;
+        background-color: #3a2a22;
+        background-image: url('../img/portfolio-bg.jpg'); // замените на реальное фото
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: flex-start;
+        padding: 48px;
+
+        @media screen and (max-width: $phoneWidth) {
+            height: 200px;
+            padding: 32px 20px;
+        }
+    }
+
+    &__banner-title {
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 40px;
+        color: #fff;
+        line-height: 1.15;
+
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 28px;
+        }
+    }
+
+    &__grid-wrap {
+        background-color: $light-bg;
+        padding: 32px 0 70px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+        gap: 12px;
+
+        @media screen and (max-width: $tableWidth) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 140px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #e0d8d1;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover .portfolio__img {
+            transform: scale(1.05);
+        }
+
+        &--placeholder {
+            background: linear-gradient(135deg, #d0c4bc 0%, #b8a99e 100%);
+        }
+
+        &--more {
+            background-color: $brown-color;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(#462b25, 6%);
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    &__badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(255,255,255,0.9);
+        color: $main-title-color;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 12px;
+    }
+
+    &__more-arrow {
+        font-size: 26px;
+        color: #fff;
+        align-self: flex-end;
+        margin-bottom: auto;
+    }
+
+    &__more-text {
+        font-family: $mainFont;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 16px;
+        }
+    }
+}
+
+// =============================================
+// Секция: Отзывы
+// =============================================
+
+.reviews {
+    padding: 70px 0;
+    background-color: #fff;
+
+    @media screen and (max-width: $phoneWidth) {
+        padding: 48px 0;
+    }
+
+    &__title {
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 32px;
+        text-align: center;
+        color: $main-title-color;
+        margin: 0 0 36px;
+
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 24px;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+
+        @media screen and (max-width: $tableWidth) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.review-card {
+    background: #f8f7f5;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        background-color: #ddd;
+    }
+
+    &__avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__avatar-placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #c5a68a, #9e7555);
+    }
+
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__name {
+        font-family: $mainFont;
+        font-size: 14px;
+        font-weight: 600;
+        color: $main-title-color;
+    }
+
+    &__stars {
+        display: flex;
+        gap: 2px;
+    }
+
+    &__star {
+        color: #f5a623;
+        font-size: 14px;
+    }
+
+    &__text {
+        font-size: 13px;
+        line-height: 1.55;
+        color: #555;
+        margin: 0;
+        flex: 1;
+    }
+
+    &__before {
+        font-size: 13px;
+        color: #aaa;
+        text-decoration: none;
+        padding: 6px 14px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        width: max-content;
+        transition: all 0.25s ease;
+
+        &:hover {
+            background: $brown-color;
+            color: #fff;
+            border-color: $brown-color;
+        }
+    }
+}
+
+// =============================================
+// Секция: Преимущества перетяжки мебели
+// =============================================
+
+.advantages {
+    padding: 70px 0;
+    background-color: $light-bg;
+
+    @media screen and (max-width: $phoneWidth) {
+        padding: 48px 0;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 32px;
+        align-items: stretch;
+
+        @media screen and (max-width: $tableWidth) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__image-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        min-height: 380px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 28px;
+        background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__overlay-title {
+        font-family: $mainFont;
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    &__overlay-text {
+        font-size: 13px;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.85);
+        margin: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border-radius: 20px;
+        padding: 12px 28px;
+
+        @media screen and (max-width: $phoneWidth) {
+            padding: 12px 16px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px 0;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__item-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+    }
+
+    &__item-title {
+        font-family: $mainFont;
+        font-size: 16px;
+        font-weight: 700;
+        color: $main-title-color;
+        margin: 0;
+    }
+
+    &__item-text {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    &__item-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #f0ebe6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    &__item-spinner {
+        width: 18px;
+        height: 18px;
+        border: 2px solid $brown-color;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1.5s linear infinite;
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+// =============================================
+// Секция: Как заказать обивку мебели
+// =============================================
+
+.howtoorder {
+    padding: 70px 0;
+    background-color: #fff;
+
+    @media screen and (max-width: $phoneWidth) {
+        padding: 48px 0;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 60px;
+        align-items: start;
+
+        @media screen and (max-width: $tableWidth) {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__title {
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 1.2;
+        color: $main-title-color;
+        margin: 0;
+
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 26px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 14px;
+        background-color: #f5f0ec;
+        border-radius: 12px;
+        text-decoration: none;
+        max-width: 240px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken(#f5f0ec, 5%);
+        }
+    }
+
+    &__cta-img {
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__cta-text {
+        font-family: $mainFont;
+        font-size: 14px;
+        font-weight: 600;
+        color: $main-title-color;
+        flex: 1;
+    }
+
+    &__cta-arrow {
+        font-size: 20px;
+        color: $main-title-color;
+        flex-shrink: 0;
+    }
+
+    &__steps {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__step {
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__step-header {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin-bottom: 4px;
+    }
+
+    &__step-num {
+        font-size: 12px;
+        color: #aaa;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    &__step-title {
+        font-family: $mainFont;
+        font-size: 16px;
+        font-weight: 700;
+        color: $main-title-color;
+        margin: 0;
+    }
+
+    &__step-text {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.55;
+        margin: 0 0 0 42px;
+    }
+}
+
+// =============================================
+// Секция: Часто задаваемые вопросы
+// =============================================
+
+.faq {
+    padding: 70px 0 80px;
+    background-color: $light-bg;
+
+    @media screen and (max-width: $phoneWidth) {
+        padding: 48px 0 60px;
+    }
+
+    &__title {
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+        color: $main-title-color;
+        line-height: 1.25;
+        margin: 0 0 40px;
+
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 22px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+
+        &--open {
+            .faq__question {
+                border-bottom: 1px solid #f0f0f0;
+            }
+        }
+    }
+
+    &__question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 18px 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        gap: 16px;
+    }
+
+    &__question-text {
+        font-family: $mainFont;
+        font-size: 15px;
+        font-weight: 500;
+        color: $main-title-color;
+        line-height: 1.3;
+    }
+
+    &__toggle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 18px;
+        color: $main-title-color;
+        line-height: 1;
+        transition: all 0.25s ease;
+
+        .faq__item--open & {
+            background-color: $main-title-color;
+            color: #fff;
+            border-color: $main-title-color;
+        }
+    }
+
+    &__answer {
+        padding: 0 22px 18px;
+    }
+
+    &__answer-text {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.65;
+        margin: 0;
+        padding-top: 14px;
+    }
+}

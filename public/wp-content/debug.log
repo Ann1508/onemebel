@@ -1,0 +1,85 @@
+[15-Mar-2026 20:50:43 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:50:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_lang_url_home_page() in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php:85
+Stack trace:
+#0 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(814): require_once()
+#1 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(749): load_template('/Applications/M...', true, Array)
+#2 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/service.php(5): get_header()
+#4 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template-loader.php(125): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/onemebel/wordpress/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/onemebel/wordpress/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php on line 85
+[15-Mar-2026 20:50:44 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:50:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_lang_url_home_page() in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php:85
+Stack trace:
+#0 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(814): require_once()
+#1 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(749): load_template('/Applications/M...', true, Array)
+#2 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/404.php(10): get_header()
+#4 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template-loader.php(125): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/onemebel/wordpress/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/onemebel/wordpress/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php on line 85
+[15-Mar-2026 20:52:05 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:52:18 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:52:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_lang_url_home_page() in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php:85
+Stack trace:
+#0 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(814): require_once()
+#1 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(749): load_template('/Applications/M...', true, Array)
+#2 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/service.php(5): get_header()
+#4 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template-loader.php(125): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/onemebel/wordpress/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/onemebel/wordpress/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php on line 85
+[15-Mar-2026 20:52:19 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:52:19 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:52:19 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:52:19 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>acf</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/functions.php on line 6131
+[15-Mar-2026 20:52:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_lang_url_home_page() in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php:85
+Stack trace:
+#0 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(814): require_once()
+#1 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(749): load_template('/Applications/M...', true, Array)
+#2 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/404.php(10): get_header()
+#4 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template-loader.php(125): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/onemebel/wordpress/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/onemebel/wordpress/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php on line 85
+[15-Mar-2026 20:52:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_lang_url_home_page() in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php:85
+Stack trace:
+#0 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(814): require_once()
+#1 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(749): load_template('/Applications/M...', true, Array)
+#2 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/404.php(10): get_header()
+#4 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template-loader.php(125): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/onemebel/wordpress/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/onemebel/wordpress/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php on line 85
+[15-Mar-2026 20:52:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_lang_url_home_page() in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php:85
+Stack trace:
+#0 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(814): require_once()
+#1 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(749): load_template('/Applications/M...', true, Array)
+#2 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/404.php(10): get_header()
+#4 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template-loader.php(125): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/onemebel/wordpress/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/onemebel/wordpress/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php on line 85
+[15-Mar-2026 20:52:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_lang_url_home_page() in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php:85
+Stack trace:
+#0 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(814): require_once()
+#1 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template.php(749): load_template('/Applications/M...', true, Array)
+#2 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/404.php(10): get_header()
+#4 /Applications/MAMP/htdocs/onemebel/wordpress/wp-includes/template-loader.php(125): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/onemebel/wordpress/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/onemebel/wordpress/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/onemebel/wordpress/wp-content/themes/monoflowers/header.php on line 85

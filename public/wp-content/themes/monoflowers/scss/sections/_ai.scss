@@ -1,0 +1,104 @@
+.ai-section {
+    padding: 0 0 100px 0;
+    background-color: $white-color;
+
+    @media screen and (max-width: 1169px) {
+        padding: 0 0 70px 0;
+    }
+
+    &__content {
+        position: relative;
+
+        &--background {
+            img {
+                border-radius: 19px;
+
+                @media screen and (max-width: 1169px) {
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &--text {
+            position: absolute;
+            top: 182px;
+            left: 120px;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            padding: 30px 15px;
+            border-radius: 33px;
+            border: 1.243px solid rgba(255, 255, 255, 0.20);
+            background: linear-gradient(186deg, rgba(31, 34, 40, 0.70) 36.63%, rgba(135, 135, 135, 0.70) 170.41%);
+            backdrop-filter: blur(6px);
+            box-shadow: 57.19px 238.706px 68.379px 0 rgba(52, 56, 63, 0.01), 36.055px 152.921px 63.406px 0 rgba(52, 56, 63, 0.06), 21.135px 85.785px 53.46px 0 rgba(52, 56, 63, 0.20), 8.703px 38.541px 39.784px 0 rgba(52, 56, 63, 0.34), 2.487px 9.946px 21.135px 0 rgba(52, 56, 63, 0.39);
+            transform: rotate(-8.152deg);
+
+            @media screen and (max-width: 1169px) {
+                top: 38%;
+                left: 8%;
+                max-width: 425px;
+                gap: 0.5rem;
+                padding: 16px 13px;
+                border-radius: 16px;
+                border-radius: 17px;
+                border: 0.65px solid rgba(255, 255, 255, 0.20);
+                backdrop-filter: blur(3px);
+            }
+
+            @media screen and (max-width: 710px) {
+                left: 2%;
+                max-width: 340px;
+                padding: 15px 5px;
+                border-radius: 13px;
+                backdrop-filter: blur(2px);
+                transform: rotate(-7.252deg);
+            }
+
+            .main-title {
+                font-size: 26px;
+                letter-spacing: -0.52px;
+
+                @media screen and (max-width: 1169px) {
+                    font-size: 16px;
+                    letter-spacing: -0.268px;
+                }
+
+                @media screen and (max-width: 710px) {
+                    font-size: 12px;
+                    letter-spacing: -0.24px;
+                }
+            }
+
+            .main-text {
+                font-size: 20px;
+                line-height: 28px;
+                color: $white-color;
+                letter-spacing: -0.416px;
+
+                @media screen and (max-width: 1169px) {
+                    font-size: 13px;
+                    line-height: 15px;
+                    letter-spacing: -0.214px;
+                }
+
+                @media screen and (max-width: 710px) {
+                    font-size: 11px;
+                    line-height: 12px;
+                }
+            }
+
+            &.de {
+                .main-text {
+                    @media screen and (max-width: 500px) {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+.demo {
+    position: relative;
+    padding: 0 0 100px 0;
+    background-color: $white-color;
+
+    @media screen and (max-width: 1169px) {
+        padding: 0 0 70px 0;
+    }
+
+    @media screen and (max-width: 710px) {
+        padding: 0 0 64px 0;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 56px;
+        border-radius: 48px;
+        background: $Primary-Text;
+        color: $white-color;
+        padding: 50px 0 50px 40px;
+
+        @media screen and (max-width: 1169px) {
+            flex-direction: column;
+        }
+
+
+        &--left {
+            max-width: 638px;
+            width: 100%;
+
+            @media screen and (max-width: 1169px) {
+                max-width: 100%;
+            }
+        }
+
+        &--right {
+            position: relative;
+            max-width: 433px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            @media screen and (max-width: 1169px) {
+                max-width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1169px) {
+            padding: 76px 32px;
+        }
+
+        @media screen and (max-width: 1169px) {
+            padding: 64px 16px;
+        }
+
+        @media screen and (max-width: 710px) {
+            padding: 32px 16px 20px 16px;
+            border-radius: 50px;
+        }
+
+        .main-title {
+            padding-bottom: 16px;
+        }
+
+        .main-subtitle {
+            color: $white-color;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 162.5%;
+            letter-spacing: -0.32px;
+        }
+
+        .btn {
+            margin: 0 auto;
+
+            &.icon {
+                &.en {
+                    padding: 11px 58px 11px 33px;
+
+                    @media screen and (max-width: 710px) {
+                        padding: 11px 16px;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 710px) {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        &--image {
+            height: 534px;
+            width: 100%;
+            position: relative;
+
+            @media screen and (max-width: 1169px) {
+                display: none;
+            }
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            @media screen and (max-width: 1169px) {
+                display: none;
+            }
+        }
+
+        .btn {
+            // margin: 36px 24px 0 0;
+            padding: 17px 68px 17px 25px !important;
+            box-shadow: 0px 5.49px 21.96px 0px rgba(43, 43, 43, 0.3);
+            position: absolute;
+            bottom: -12px;
+            right: 24px;
+
+            @media screen and (max-width: 1169px) {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    &__advantages {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px 4%;
+        padding: 48px 0 0 0;
+
+        @media screen and (max-width: 1169px) {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        &--item {
+            width: 48%;
+
+            @media screen and (max-width: 1169px) {
+                width: 46%;
+            }
+
+            @media screen and (max-width: 710px) {
+                width: 100%;
+            }
+
+            .icon {
+                width: 48px;
+                height: 48px;
+                aspect-ratio: 1/1;
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 155.556%;
+                letter-spacing: --0.36px;
+                padding-bottom: 4px;
+            }
+
+            .main-text {
+                color: $white-color;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 162.5%;
+                letter-spacing: -0.32px;
+            }
+        }
+    }
+}

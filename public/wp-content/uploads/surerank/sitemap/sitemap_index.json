@@ -1,0 +1,18 @@
+[
+    {
+        "link": "http:\/\/localhost:8888\/post-type-elementor_library-sitemap-1.xml",
+        "updated": "2026-02-14T13:45:14+03:00"
+    },
+    {
+        "link": "http:\/\/localhost:8888\/post-type-post-sitemap-1.xml",
+        "updated": "2026-02-14T13:45:14+03:00"
+    },
+    {
+        "link": "http:\/\/localhost:8888\/post-type-sureforms_form-sitemap-1.xml",
+        "updated": "2026-02-14T13:45:14+03:00"
+    },
+    {
+        "link": "http:\/\/localhost:8888\/taxonomy-type-category-sitemap-1.xml",
+        "updated": "2026-02-14T13:45:14+03:00"
+    }
+]

@@ -1,0 +1,8 @@
+.starting-price {
+    display: none;
+    text-decoration: line-through;
+
+    &.active {
+        display: inline;
+    }
+}

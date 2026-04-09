@@ -1,0 +1,234 @@
+.works {
+    padding: 100px 0;
+    background: #1D2329;
+    overflow: hidden;
+
+    @media screen and (max-width: 1169px) {
+        padding: 70px 0;
+    }
+
+    @media screen and (max-width: 710px) {
+        padding: 64px 0;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 60px;
+
+        @media screen and (max-width: 1169px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @media screen and (max-width: 710px) {
+            margin-bottom: 32px;
+        }
+
+        .main-title {
+            color: $white-color;
+        }
+
+        .main-text {
+            color: $white-color;
+            max-width: 400px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 162.5%;
+
+            @media screen and (max-width: 1169px) {
+                max-width: 100% !important;
+            }
+
+            &.de {
+                max-width: 475px;
+            }
+        }
+    }
+
+    &__slider {
+        .swiper-slide {
+            .works__slider--item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                min-height: 409px;
+                height: 100%;
+                padding: 20px;
+                border-radius: 30px;
+                background: rgba(255, 255, 255, 0.1);
+
+                .main-text {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 157.143%;
+                }
+
+                @media screen and (max-width: 710px) {
+                    padding: 16px;
+                }
+
+                .item-info {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 10px;
+                    width: 100%;
+                    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+                    padding-bottom: 20px;
+
+                    .title {
+                        color: $Primary;
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.4px;
+                        flex: 1 0 0;
+                    }
+
+                    .icon {
+                        display: flex;
+                        width: 48px;
+                        height: 48px;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50px;
+                        background: $Primary;
+                    }
+                }
+
+                .main-text {
+                    color: $white-color;
+                }
+
+                .item-img {
+                    position: relative;
+                    max-height: 193px;
+                    height: 193px;
+                    width: 100%;
+                    margin-top: auto;
+
+                    @media screen and (max-width: 1169px) {
+                        width: auto;
+                    }
+
+                    img {
+                        border-radius: 20px;
+                    }
+
+                    .btn {
+                        position: absolute;
+                        bottom: -10px;
+                        right: -12px;
+                        border-color: $Primary-Text;
+                        border-radius: 50px;
+                        background: $Primary-Text;
+                        box-shadow: 0px 5.49px 21.96px 0px rgba(43, 43, 43, 0.3);
+                        color: $white-color;
+                        letter-spacing: -0.374px;
+                        gap: 38px;
+
+                        @media screen and (max-width: 710px) {
+                            right: 11px;
+                            bottom: 24px;
+                        }
+
+                        &.icon {
+                            padding: 17px 68px 17px 25px;
+                        }
+
+                        .icon-circle {
+                            background: $Primary;
+                            border-radius: 50px;
+                            width: 42px;
+                            height: 42px;
+                            transition: 0.3s;
+                                svg {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                        }
+
+                        @media screen and (min-width: 1169px) {
+                            &:hover {
+                                border-color: $Primary;
+                                background: $Primary;
+                                color: $Primary-Text;
+
+                                .icon-circle {
+                                    background: $Primary-Text;
+
+                                    svg path {
+                                        fill: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                .works__slider--item {
+                    background-color: $Primary;
+
+                    .item-info {
+                        border-bottom: 1px solid rgb(43, 43, 43, 0.1);
+
+                        .title {
+                            color: $Primary-Text;
+                        }
+
+                        .icon {
+                            background: $Primary-Text;
+                        }
+                    }
+
+                    .main-text {
+                        color: $Primary-Text;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper {
+        @media screen and (max-width: 1169px) {
+            overflow: visible;
+        }
+
+        .swiper-wrapper {
+            @media screen and (max-width: 1169px) {
+                padding-bottom: 50px;
+            }
+
+            @media screen and (max-width: 710px) {
+                padding-bottom: 20px;
+            }
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .swiper-scrollbar {
+            height: 4px;
+            background: $white-color;
+            border-radius: 20px;
+            opacity: 1 !important;
+            width: 120px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+
+            .swiper-scrollbar-drag {
+                background: $Primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,180 @@
+.our-plugin {
+  padding: 100px 0;
+  background-color: $white-color;
+  z-index: 10;
+
+  @media screen and (max-width: 1169px) {
+    padding: 70px 0;
+  }
+
+  @media screen and (max-width: 710px) {
+    padding: 64px 0;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 33px;
+
+    @media screen and (max-width: 1169px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    &--left {
+      width: 56.5%;
+
+      @media screen and (max-width: 1169px) {
+        width: 100%;
+      }
+
+      .main-title {
+        color: $main-title-color;
+        padding-bottom: 10px;
+        max-width: 70%;
+        text-wrap: auto;
+      }
+    }
+
+    &--image {
+      position: relative;
+      max-width: 494px;
+      // height: 443px;
+
+      @media screen and (max-width: 1169px) {
+        height: auto;
+      }
+
+      img {
+        border-radius: 45px;
+
+        @media screen and (max-width: 1169px) {
+          border-radius: 33px;
+        }
+      }
+
+      .btn {
+        position: absolute;
+        bottom: -20px;
+        right: 17px;
+        border-color: $Primary-Text;
+        border-radius: 50px;
+        background: $Primary-Text;
+        box-shadow: 0px 5.49px 21.96px 0px rgba(43, 43, 43, 0.3);
+        color: $white-color;
+        font-size: 22px;
+        line-height: 38.87px;
+        letter-spacing: -0.453px;
+        gap: 47px;
+        width: 298px;
+
+        &.icon {
+          padding: 17px 68px 17px 25px;
+        }
+
+        .icon-circle {
+          background: $Primary;
+          border-radius: 50px;
+          width: 62px;
+          height: 62px;
+          transition: 0.3s;
+        }
+
+        @media screen and (min-width: 1169px) {
+          &:hover {
+            background: $Primary;
+            color: $Primary-Text;
+
+            .icon-circle {
+              background: $Primary-Text;
+
+              svg path {
+                fill: $white-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__items {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 2%;
+
+    @media screen and (max-width: 1169px) {
+      padding-top: 32px;
+    }
+
+    @media screen and (max-width: 710px) {
+      flex-direction: column;
+    }
+
+    &--item {
+      width: 49%;
+
+      @media screen and (max-width: 710px) {
+        width: 100%;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13.5px 20px 14px 60px;
+        border-radius: 30px;
+        width: 100%;
+        background: var(--Primary, #e0ff6a);
+        position: relative;
+        height: 100%;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 23px;
+          width: 20px;
+          height: 20px;
+          background: url("/wp-content/themes/one-mebel-landing/assets/img/check-icon.svg")
+            no-repeat center center;
+          background-size: contain;
+        }
+      }
+
+      .title {
+        color: #1d2329;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 162.5%;
+        letter-spacing: -0.32px;
+
+        @media screen and (max-width: 330px) {
+          font-size: 14px;
+        }
+      }
+
+      &:last-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: var(--Primary, #e0ff6a);
+        border-radius: 30px;
+
+        @media screen and (max-width: 710px) {
+          justify-content: flex-start;
+        }
+
+        .info {
+          justify-content: center;
+          position: relative;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}

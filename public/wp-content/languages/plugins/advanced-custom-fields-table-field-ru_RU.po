@@ -1,0 +1,103 @@
+# Translation of Plugins - Table Field Add-on for ACF and SCF - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Table Field Add-on for ACF and SCF - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-12-04 07:18:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Table Field Add-on for ACF and SCF - Stable (latest release)\n"
+
+#: integrations/polylang/init.php:20
+msgid "Translations"
+msgstr "Переводы"
+
+#: integrations/polylang/init.php:12
+msgid "Synchronize"
+msgstr "Синхронизировать"
+
+#: integrations/polylang/init.php:11
+msgid "Translate once"
+msgstr "Перевести один раз"
+
+#: integrations/polylang/init.php:10
+msgid "Translate"
+msgstr "Перевести"
+
+#: integrations/polylang/init.php:9
+msgid "Copy once"
+msgstr "Скопировать один раз"
+
+#: integrations/polylang/init.php:8
+msgid "Ignore"
+msgstr "Игнорировать"
+
+#. Description of the plugin
+#: acf-table.php
+msgid "This free Add-on adds a table field type for the plugins Advanced Custom Fields and Secure Custom Fields."
+msgstr "Это бесплатное дополнение добавляет тип поля таблицы для плагинов Advanced Custom Fields и Secure Custom Fields."
+
+#. Plugin Name of the plugin
+#: acf-table.php
+msgid "Table Field Add-on for ACF and SCF"
+msgstr "Поле таблицы для ACF и SCF"
+
+#: class-jh-acf-field-table.php:52
+msgid "This allows you to easily edit tabular content."
+msgstr "Позволяет вам легко редактировать содержимое в формате таблиц."
+
+#. Plugin URI of the plugin
+#: acf-table.php
+msgid "https://www.acf-table-field.com"
+msgstr "https://www.acf-table-field.com"
+
+#: class-jh-acf-field-table.php:167
+msgid "Presetting the usage of table caption"
+msgstr "Предварительная настройка использования подписи таблицы"
+
+#: class-jh-acf-field-table.php:166 class-jh-acf-field-table.php:245
+msgid "Table Caption"
+msgstr "Подпись таблицы"
+
+#: class-jh-acf-field-table.php:153
+msgid "Presetting the usage of table header"
+msgstr "Предварительная настройка использования заголовка таблицы"
+
+#: class-jh-acf-field-table.php:157
+msgid "Optional"
+msgstr "Опционально"
+
+#: class-jh-acf-field-table.php:152
+msgid "Table Header"
+msgstr "Заголовок таблицы"
+
+#: class-jh-acf-field-table.php:158 class-jh-acf-field-table.php:171
+#: class-jh-acf-field-table.php:231
+msgid "Yes"
+msgstr "Да"
+
+#: class-jh-acf-field-table.php:159 class-jh-acf-field-table.php:172
+#: class-jh-acf-field-table.php:230
+msgid "No"
+msgstr "Нет"
+
+#: class-jh-acf-field-table.php:228
+msgid "use table header"
+msgstr "использовать заголовок таблицы"
+
+#: class-jh-acf-field-table.php:62
+msgid "Table"
+msgstr "Таблица"
+
+#. Author of the plugin
+#: acf-table.php
+msgid "Johann Heyne"
+msgstr "Johann Heyne"
+
+#. Author URI of the plugin
+#: acf-table.php
+msgid "http://www.johannheyne.de"
+msgstr "http://www.johannheyne.de"
