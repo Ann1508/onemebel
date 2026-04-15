@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     width: 100%;
-    padding-bottom: 0; // убираем нижний отступ — его даёт блок преимуществ
+    padding-bottom: 0; 
 
     .container {
         position: relative;
@@ -110,7 +110,6 @@
         }
     }
 
-    // --- Блок преимуществ под слайдером ---
     &__advantages {
         position: absolute;
         bottom: 40px;
@@ -203,7 +202,6 @@
     }
     }
 
-    // Swiper pagination
     .swiper-horizontal > .swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal {
         position: absolute;

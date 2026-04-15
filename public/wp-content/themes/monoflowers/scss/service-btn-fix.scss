@@ -1,9 +1,3 @@
-// =============================================
-// ИСПРАВЛЕНИЕ: кнопки на страницах услуг — КОРИЧНЕВЫЕ
-// Добавить в конец scss/sections/_service-page.scss
-// =============================================
-
-// Hero-кнопка (главная секция услуги)
 .service-hero__btn {
     display: inline-flex;
     align-items: center;
@@ -34,7 +28,6 @@
     }
 }
 
-// Кнопки "Рассчитать стоимость" в секции цен услуги — коричневые
 .service-prices__btn {
     background-color: $brown-color !important;
     color: #fff !important;
@@ -45,7 +38,6 @@
     }
 }
 
-// Кнопки в svc-advantages форме
 .svc-advantages__form-submit {
     background-color: $brown-color !important;
     color: #fff !important;
@@ -55,8 +47,6 @@
     }
 }
 
-// Глобальный сброс зелёного $Primary для кнопок на страницах услуг
-// Если .btn используется в single-service — перебиваем цвет
 .single-service .btn,
 .service-hero .btn,
 .service-prices .btn {

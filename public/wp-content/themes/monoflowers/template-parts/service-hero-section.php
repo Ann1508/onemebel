@@ -1,9 +1,4 @@
 <?php
-/**
- * Template part: Герой-секция страницы услуги
- * ИСПРАВЛЕНО: кнопка использует класс service-hero__btn (коричневая, не зелёная)
- */
-
 $title      = get_field('service_hero_title')   ?: get_the_title();
 $text       = get_field('service_hero_text')    ?: 'Перетяжка дивана позволяет вернуть мягкой мебели привлекательный внешний вид, изменить надоевший дизайн, обновить интерьер. Но такая процедура требует профессионального подхода, чтобы результат оправдал ожидания и сохранился на долгое время.';
 $hero_image = get_field('service_hero_image');
@@ -16,7 +11,6 @@ $parent = get_post_parent();
 <section class="service-hero">
     <div class="container">
 
-        <!-- Хлебные крошки -->
         <nav class="service-hero__breadcrumbs" aria-label="breadcrumb">
             <a href="<?php echo home_url('/'); ?>" class="service-hero__breadcrumb-link">Главная</a>
             <span class="service-hero__breadcrumb-sep">›</span>
@@ -31,17 +25,14 @@ $parent = get_post_parent();
 
         <div class="service-hero__inner">
 
-            <!-- Левая: заголовок + текст + кнопка -->
             <div class="service-hero__left">
                 <h1 class="service-hero__title"><?php echo esc_html($title); ?></h1>
                 <p class="service-hero__text"><?php echo esc_html($text); ?></p>
-                <!-- НЕ используем класс .btn (он зелёный $Primary), используем .service-hero__btn -->
                 <button class="service-hero__btn js-open-modal">
                     РАССЧИТАТЬ СТОИМОСТЬ
                 </button>
             </div>
 
-            <!-- Правая: фотография -->
             <div class="service-hero__right">
                 <div class="service-hero__image">
                     <img src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" class="service-hero__img">

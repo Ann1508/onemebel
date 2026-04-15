@@ -1,10 +1,4 @@
 <?php
-/**
- * Template part: Секция "Отзывы"
- * Подключается в home.php через: get_template_part('template-parts/reviews-section');
- *
- * Отзывы берутся из CPT 'review' или из ACF Repeater 'reviews'.
- */
 
 $reviews_query = new WP_Query([
     'post_type'      => 'review',

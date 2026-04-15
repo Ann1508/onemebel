@@ -4,7 +4,6 @@
     <div class="container">
         <div class="footer__top">
 
-            <!-- Левая колонка: логотип + юр. info -->
             <div class="footer__top--left">
                 <div class="left__info">
                     <a href="<?php echo home_url(); ?>">
@@ -20,7 +19,6 @@
                 </div>
             </div>
 
-            <!-- Центр: меню -->
             <div class="footer__top--center">
                 <div class="footer__menu">
                     <?php
@@ -34,11 +32,9 @@
                 </div>
             </div>
 
-            <!-- Правая колонка: соцсети + телефон + кнопка -->
             <div class="footer__top--right">
                 <div class="contact__info">
 
-                    <!-- Иконки соцсетей -->
                     <div class="footer__socials">
                         <a href="<?php the_field('telegram', 'option'); ?>" 
                            class="footer__social-link" target="_blank">
@@ -77,13 +73,11 @@
                         </a>
                     </div>
 
-                    <!-- Телефон -->
                     <a class="contact__info-item" 
                        href="tel:<?php the_field('phone', 'option'); ?>">
                         <span><?php the_field('phone', 'option'); ?></span>
                     </a>
 
-                    <!-- Кнопка -->
                     <a href="#" class="footer__cta js-open-modal">
                         Бесплатная консультация
                     </a>
@@ -93,7 +87,6 @@
 
         </div>
 
-        <!-- Низ футера -->
         <div class="footer__bottom">
             <div class="copyright">
                 © <?php echo date('Y'); ?> 
@@ -107,7 +100,6 @@
     </div>
 </footer>
 
-<!-- МОДАЛЬНОЕ ОКНО — подключается один раз в футере -->
 <?php get_template_part('template-parts/modal-calc'); ?>
 
 <?php wp_footer(); ?>

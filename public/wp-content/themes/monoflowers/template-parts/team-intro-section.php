@@ -1,15 +1,4 @@
 <?php
-/**
- * Template part: Секция "Intro о команде" — заголовок + фото
- * Подключается через: get_template_part('template-parts/team-intro-section')
- *
- * ACF-поля (страница Команда):
- *   team_image  — Image    — Фото справа
- *   team_text1  — Textarea — Первый абзац
- *   team_text2  — Textarea — Второй абзац
- *   team_text3  — Textarea — Третий абзац
- */
-
 $team_image   = get_field('team_image');
 $team_img_url = $team_image
     ? esc_url($team_image['url'])

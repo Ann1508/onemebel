@@ -1,28 +1,15 @@
-<?php
-/**
- * Template part: Модальное окно "Рассчитать стоимость" (2 шага)
- * Подключается в footer.php перед <?php wp_footer(); ?>
- *
- * Шаг 1 — параметры мебели
- * Шаг 2 — контактные данные
- * При отправке — письмо владельцу через wp_mail()
- */
-?>
-
-<!-- Оверлей -->
 <div class="modal-overlay" id="modal-calc-overlay"></div>
 
-<!-- Модальное окно -->
+
 <div class="modal-calc" id="modal-calc" role="dialog" aria-modal="true" aria-labelledby="modal-calc-title">
 
-    <!-- Кнопка закрытия -->
+
     <button class="modal-calc__close" id="modal-calc-close" aria-label="Закрыть">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18 6L6 18M6 6L18 18" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
         </svg>
     </button>
 
-    <!-- ШАГ 1 -->
     <div class="modal-calc__step" id="modal-step-1">
         <h2 class="modal-calc__title" id="modal-calc-title">Рассчитать стоимость</h2>
         <p class="modal-calc__desc">Описание в одну две строки</p>
@@ -105,7 +92,6 @@
         </div>
     </div>
 
-    <!-- ШАГ 2 -->
     <div class="modal-calc__step" id="modal-step-2" style="display:none;">
         <button class="modal-calc__back" id="mc-back-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/></svg>
@@ -159,7 +145,6 @@
         </p>
     </div>
 
-    <!-- УСПЕХ -->
     <div class="modal-calc__step modal-calc__success" id="modal-success" style="display:none;">
         <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="32" cy="32" r="30" stroke="#462b25" stroke-width="2"/>
@@ -172,5 +157,4 @@
 
 </div>
 
-<!-- Hidden nonce for AJAX -->
 <input type="hidden" id="mc-nonce" value="<?php echo wp_create_nonce('modal_calc_submit'); ?>">

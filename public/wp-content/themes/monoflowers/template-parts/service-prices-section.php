@@ -1,24 +1,9 @@
 <?php
-/**
- * Template part: Секция "Цены на обивку дивана"
- * Image 3: Серый фон, слева заголовок + текст + кнопка, справа таблица цен
- * Подключается через: get_template_part('template-parts/service-prices-section');
- *
- * ACF поля (на странице):
- *  - service_prices_title   (текст)
- *  - service_prices_note    (textarea)
- *  - service_prices_items   (Repeater: name + price)
- *
- * Или цены берутся из CPT 'price_item' с таксономией или meta_value 'service_type' = post slug.
- */
-
 $prices_title = get_field('service_prices_title') ?: 'Цены на обивку дивана';
 $prices_note  = get_field('service_prices_note')  ?: 'Вы можете прислать фотографии вашей мебели на E-mail или удобный Вам мессенджер с описанием (комментарием) и наши мастера сделают ориентировочный расчет цены перетяжки.';
 
-// Пробуем взять цены из ACF Repeater
 $price_rows = get_field('service_prices_items') ?: [];
 
-// Иначе — из CPT price_item
 if (empty($price_rows)) {
     $prices_query = new WP_Query([
         'post_type'      => 'price_item',
@@ -51,7 +36,6 @@ if (empty($price_rows)) {
     }
 }
 
-// Заглушки если совсем ничего нет
 if (empty($price_rows)) {
     $price_rows = [
         ['name' => 'Кухонные уголки', 'price' => '25'],
@@ -68,7 +52,6 @@ if (empty($price_rows)) {
     <div class="container">
         <div class="service-prices__inner">
 
-            <!-- Левая колонка -->
             <div class="service-prices__left">
                 <h2 class="service-prices__title"><?php echo esc_html($prices_title); ?></h2>
                 <p class="service-prices__note"><?php echo esc_html($prices_note); ?></p>
@@ -77,7 +60,6 @@ if (empty($price_rows)) {
                 </a>
             </div>
 
-            <!-- Правая колонка: таблица -->
             <div class="service-prices__right">
                 <table class="service-prices__table">
                     <thead>

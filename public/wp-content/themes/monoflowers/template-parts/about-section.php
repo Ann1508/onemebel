@@ -1,11 +1,4 @@
 <?php
-/**
- * Template part: Секция "Коротко о нас" + логотипы производителей
- * Подключается в home.php через: get_template_part('template-parts/about-section');
- *
- * Изображение и текст берутся из ACF или из настроек страницы.
- * Логотипы производителей — из ACF Repeater 'brands'.
- */
 
 $about_image = get_field('about_image');
 $about_img_url = $about_image ? esc_url($about_image['url']) : get_template_directory_uri() . '/img/about-sofa.jpg';
@@ -31,14 +24,12 @@ $brands_list = !empty($brands) ? $brands : $brands_default;
     <div class="container">
         <div class="about__inner">
 
-            <!-- Левая колонка: заголовок + текст -->
             <div class="about__left">
                 <h2 class="about__title">Коротко о нас</h2>
                 <p class="about__text"><?php echo esc_html($about_text1); ?></p>
                 <p class="about__text"><?php echo esc_html($about_text2); ?></p>
             </div>
 
-            <!-- Правая колонка: бэджи + фото -->
             <div class="about__right">
                 <div class="about__image">
                     <div class="about__badges">
@@ -61,7 +52,6 @@ $brands_list = !empty($brands) ? $brands : $brands_default;
     </div>
 </section>
 
-<!-- ===== Производители ===== -->
 <section class="brands">
     <div class="container">
         <h2 class="brands__title">Перетягиваем диваны и другую<br>мебель следующих производителей</h2>

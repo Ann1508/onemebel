@@ -16,7 +16,6 @@
 
     <div class="overlay"></div>
 
-    <!-- Мобильное меню -->
     <div class="mobile-menu">
         <div class="menu__top">
             <div class="close">
@@ -46,12 +45,10 @@
         </div>
     </div>
 
-    <!-- Основная шапка -->
     <header class="header <?php echo (is_home() || is_front_page()) ? 'header-home' : 'inner-page'; ?>" id="header">
         <div class="container">
             <div class="header__row">
 
-                <!-- Лого + навигация -->
                 <div class="header__left">
                     <?php
                     $logo      = get_field('logo', 'option');
@@ -82,11 +79,9 @@
                     </nav>
                 </div>
 
-                <!-- Контакты + кнопка -->
                 <div class="header__right">
                     <div class="header__contacts">
 
-                        <!-- Соцсети -->
                         <div class="header__social_net <?php echo $is_home ? 'header-soc-net' : ''; ?>">
                             <?php $tg = get_field('telegram', 'option'); ?>
                             <?php $vb = get_field('viber', 'option'); ?>
@@ -116,8 +111,7 @@
                             </a>
                             <?php endif; ?>
                         </div>
-                       
-                        <!-- Телефон + часы -->
+       
                         <div class="header__phone__hours <?php echo $is_home ? 'header-hero-text-color' : ''; ?>">
                             <?php if (get_field('phone', 'option')) : ?>
                             <a href="tel:<?php echo preg_replace('/\D/', '', get_field('phone', 'option')); ?>">
@@ -130,14 +124,12 @@
                         </div>
                     </div>
 
-                    <!-- Кнопка "Рассчитать стоимость" (только на внутренних страницах) -->
                     <?php if (!$is_home) : ?>
                     <button class="header__calc-btn btn-open-modal">
                         Рассчитать стоимость
                     </button>
                     <?php endif; ?>
 
-                    <!-- Бургер-кнопка -->
                     <button class="menu-btn" aria-label="Открыть меню">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20 7L4 7"  stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>

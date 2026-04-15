@@ -1,8 +1,4 @@
 <?php
-/**
- * Template part: Секция "Наши работы" на главной
- * Карточки ведут на отдельные работы, "Смотреть все работы" → страница Портфолио
- */
 
 $portfolio_query = new WP_Query([
     'post_type'      => 'portfolio',
@@ -13,7 +9,6 @@ $portfolio_query = new WP_Query([
 
 $has_items = $portfolio_query->have_posts();
 
-// Ищем страницу-портфолио по шаблону
 $portfolio_pages = get_pages(['meta_key' => '_wp_page_template', 'meta_value' => 'page-portfolio.php']);
 $portfolio_url = !empty($portfolio_pages) ? get_permalink($portfolio_pages[0]->ID) : get_post_type_archive_link('portfolio');
 ?>
@@ -33,7 +28,6 @@ $portfolio_url = !empty($portfolio_pages) ? get_permalink($portfolio_pages[0]->I
                         $thumb     = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
                         $is_before = get_post_meta(get_the_ID(), 'is_before', true);
                 ?>
-                <!-- Карточка ведёт на страницу отдельной работы -->
                 <a href="<?php echo esc_url($portfolio_url); ?>" class="portfolio__item">
                     <?php if ($thumb) : ?>
                     <img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title(); ?>" class="portfolio__img">
@@ -54,7 +48,6 @@ $portfolio_url = !empty($portfolio_pages) ? get_permalink($portfolio_pages[0]->I
                 <?php endfor;
                 endif; ?>
 
-                <!-- "Смотреть все работы" → страница Портфолио -->
                 <a href="<?php echo esc_url($portfolio_url); ?>" class="portfolio__item portfolio__item--more">
                     <span class="portfolio__more-arrow">↗</span>
                     <span class="portfolio__more-text">Смотреть<br>все<br>работы</span>

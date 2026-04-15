@@ -1,28 +1,9 @@
 <?php
-/**
- * Template part: Секция "Часто задаваемые вопросы"
- * Подключается через: get_template_part('template-parts/faq-section')
- *
- * Переиспользуется на:
- *   - Главной странице (home.php)
- *   - Странице Команда (page-team.php)
- *   - Любой другой странице
- *
- * ACF-поля текущей страницы:
- *   faq_title — Text     — Заголовок секции
- *               Если не заполнено — «Часто задаваемые вопросы про перетяжку»
- *   faq_items — Repeater — Вопросы и ответы:
- *     question — Text     — Вопрос
- *     answer   — Textarea — Ответ
- */
 
-// Заголовок: берём из ACF текущей страницы, либо дефолтный
 $faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы про перетяжку';
 
-// Вопросы: берём из ACF текущей страницы
 $faqs = get_field('faq_items') ?: [];
 
-// Заглушки если ничего не задано
 $faqs_default = [
     [
         'question' => 'Как заказать обивку мебели в Минске?',
@@ -75,7 +56,6 @@ $faqs_list = !empty($faqs) ? $faqs : $faqs_default;
 
 <script>
 (function() {
-    // Находим все кнопки FAQ на странице (защита от дублирования если секция подключена дважды)
     if (window.__faqInitialized) return;
     window.__faqInitialized = true;
 
@@ -85,7 +65,6 @@ $faqs_list = !empty($faqs) ? $faqs : $faqs_default;
             var answer = item.querySelector('.faq__answer');
             var isOpen = item.classList.contains('faq__item--open');
 
-            // Закрываем все
             document.querySelectorAll('.faq__item').forEach(function(i) {
                 i.classList.remove('faq__item--open');
                 var a = i.querySelector('.faq__answer');
@@ -95,7 +74,6 @@ $faqs_list = !empty($faqs) ? $faqs : $faqs_default;
                 if (t) { t.textContent = '+'; t.className = 'faq__toggle-plus'; }
             });
 
-            // Открываем текущий если был закрыт
             if (!isOpen && answer) {
                 item.classList.add('faq__item--open');
                 answer.hidden = false;

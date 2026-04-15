@@ -1,11 +1,4 @@
 <?php
-/**
- * Template part: Секция "Что входит в работу по перетяжке мебели"
- * Подключается в home.php через: get_template_part('template-parts/process-section');
- *
- * Шаги берутся из ACF Repeater 'process_steps' или показываются заглушки.
- */
-
 $steps = get_field('process_steps') ?: [];
 
 $steps_default = [
@@ -33,7 +26,6 @@ $steps_default = [
 
 $steps_list = !empty($steps) ? $steps : $steps_default;
 
-// Изображение CTA-блока
 $cta_image = get_field('process_cta_image');
 $cta_img_url = $cta_image ? esc_url($cta_image['url']) : get_template_directory_uri() . '/img/process-cta.jpg';
 ?>
@@ -42,7 +34,6 @@ $cta_img_url = $cta_image ? esc_url($cta_image['url']) : get_template_directory_
     <div class="container">
         <div class="process__inner">
 
-            <!-- Левая колонка -->
             <div class="process__left">
                 <h2 class="process__title">Что входит<br>в работу<br>по перетяжке<br>мебели</h2>
 
@@ -55,7 +46,6 @@ $cta_img_url = $cta_image ? esc_url($cta_image['url']) : get_template_directory_
                 </a>
             </div>
 
-            <!-- Правая колонка: список шагов -->
             <div class="process__steps">
                 <?php foreach ($steps_list as $index => $step) :
                     $num   = str_pad($index + 1, 2, '0', STR_PAD_LEFT);

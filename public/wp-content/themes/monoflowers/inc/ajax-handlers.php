@@ -1,33 +1,13 @@
 <?php
-/**
- * ajax-handlers.php
- * Подключается в functions.php:
- *   require get_template_directory() . '/inc/ajax-handlers.php';
- *
- * Содержит:
- *  1. Обработчик формы "Рассчитать стоимость" — отправка письма
- *  2. AJAX-фильтр портфолио
- *  3. AJAX-табы цен
- *  4. Передача ajaxurl в JS
- */
-
-/* =============================================
-   ПЕРЕДАТЬ ajaxurl В СКРИПТЫ
-============================================= */
-
-/* =============================================
-   1. ОБРАБОТЧИК ФОРМЫ «РАССЧИТАТЬ СТОИМОСТЬ»
-============================================= */
 add_action('wp_ajax_modal_calc_submit',        'onemebel_modal_calc_submit');
 add_action('wp_ajax_nopriv_modal_calc_submit', 'onemebel_modal_calc_submit');
 
 function onemebel_modal_calc_submit() {
-    // Проверка nonce
+
     if ( ! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'modal_calc_submit') ) {
         wp_send_json_error(['message' => 'Security check failed']);
     }
 
-    // Санитизация данных
     $furniture_type   = sanitize_text_field($_POST['furniture_type']   ?? '');
     $furniture_size   = sanitize_text_field($_POST['furniture_size']   ?? '');
     $fluffiness       = sanitize_text_field($_POST['fluffiness']       ?? '');
@@ -39,12 +19,10 @@ function onemebel_modal_calc_submit() {
     $comment          = sanitize_textarea_field($_POST['comment']      ?? '');
     $contact_methods  = sanitize_text_field($_POST['contact_methods']  ?? '');
 
-    // Обязательные поля
     if ( empty($name) || empty($phone) ) {
         wp_send_json_error(['message' => 'Required fields missing']);
     }
 
-    // Email владельца сайта
     $admin_email = get_field('notification_email', 'option') ?: get_option('admin_email');
 
     $subject = '🛋 Новая заявка: Рассчитать стоимость — ' . $name;
@@ -76,16 +54,11 @@ function onemebel_modal_calc_submit() {
     if ( $sent ) {
         wp_send_json_success(['message' => 'OK']);
     } else {
-        // Даже если письмо не отправилось, показываем успех пользователю,
-        // но логируем ошибку
         error_log('ONEMEBEL: wp_mail failed for modal_calc_submit. Name: ' . $name . ', Phone: ' . $phone);
         wp_send_json_success(['message' => 'OK (mail failed)']);
     }
 }
 
-/* =============================================
-   2. AJAX-ФИЛЬТР ПОРТФОЛИО
-============================================= */
 add_action('wp_ajax_portfolio_filter',        'onemebel_portfolio_filter');
 add_action('wp_ajax_nopriv_portfolio_filter', 'onemebel_portfolio_filter');
 
@@ -131,16 +104,12 @@ function onemebel_portfolio_filter() {
     wp_die();
 }
 
-/* =============================================
-   3. AJAX-ТАБЫ ЦЕН
-============================================= */
 add_action('wp_ajax_prices_tab',        'onemebel_prices_tab');
 add_action('wp_ajax_nopriv_prices_tab', 'onemebel_prices_tab');
 
 function onemebel_prices_tab() {
     $tab = sanitize_text_field($_POST['tab'] ?? 'repair');
 
-    // Маппинг таба → meta_value поля 'price_tab' у price_item
     $tab_map = [
         'repair'  => 'repair',
         'retapiz' => 'retapiz',
@@ -156,8 +125,6 @@ function onemebel_prices_tab() {
         'order'          => 'ASC',
     ];
 
-    // Если у вас в ACF нет поля price_tab — просто показываем все цены
-    // Раскомментируйте meta_query когда добавите поле price_tab в ACF:
     $args['meta_query'] = [[
         'key'     => 'price_tab',
         'value'   => $tab_value,

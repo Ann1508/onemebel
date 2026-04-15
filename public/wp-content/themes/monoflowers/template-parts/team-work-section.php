@@ -1,14 +1,4 @@
 <?php
-/**
- * Template part: Секция "Как мы работаем" — текст + фото
- * Подключается через: get_template_part('template-parts/team-work-section')
- *
- * ACF-поля (страница Команда):
- *   team_work_image — Image    — Фото справа
- *   team_work_text1 — Textarea — Первый абзац
- *   team_work_text2 — Textarea — Второй абзац
- */
-
 $work_image   = get_field('team_work_image');
 $work_img_url = $work_image
     ? esc_url($work_image['url'])

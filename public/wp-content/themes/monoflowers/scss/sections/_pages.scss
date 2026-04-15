@@ -254,7 +254,6 @@
         }
     }
 
-    // Сетка работ
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -300,7 +299,6 @@
         }
     }
 
-    // Показать больше
     &__more-wrap {
         text-align: center;
         margin-top: 36px;
@@ -392,7 +390,6 @@
     }
 }
 
-// Stats (Наши преимущества)
 .team-stats {
     background-color: #f5f5f5;
     padding: 70px 0;
@@ -484,7 +481,6 @@
     }
 }
 
-// Как мы работаем
 .team-work {
     background-color: #fff;
     padding: 70px 0;
@@ -497,7 +493,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
-        align-items: start; // было center — меняем на start
+        align-items: start; 
 
         @media screen and (max-width: $tableWidth) {
             grid-template-columns: 1fr;
@@ -548,7 +544,6 @@
     }
 }
 
-// FAQ переопределение (для страницы Команда)
 .faq--team {
     background-color: #f5f5f5;
 }
@@ -564,17 +559,16 @@
     &__inner {
         display: grid;
         grid-template-columns: 1fr 1.4fr;
-        gap: 20px;                        // зазор между плашками
+        gap: 20px;                      
         border-radius: 0;
-        overflow: visible;                // было hidden
-        box-shadow: none;                 // убираем общую тень
+        overflow: visible;            
+        box-shadow: none;              
 
         @media screen and (max-width: $tableWidth) {
             grid-template-columns: 1fr;
         }
     }
 
-    // Левая плашка — тёмная с фото
     &__left {
         position: relative;
         min-height: 420px;
@@ -637,7 +631,7 @@
         font-family: $mainFont;
         font-weight: 700;
         font-size: 20px;
-        color: $brown-color;             // было #fff
+        color: $brown-color;            
         text-decoration: none;
         transition: opacity 0.2s ease;
 
@@ -671,11 +665,10 @@
         }
     }
 
-    // Правая плашка — светло-серая
     &__right {
-        background: #f5f5f5;             // было #fff
+        background: #f5f5f5;          
         padding: 36px 32px;
-        border-radius: 20px;             // скругление на самой плашке
+        border-radius: 20px;         
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -693,8 +686,8 @@
     }
 
     &__form-desc {
-        font-size: 15px;                 // было 14px
-        color: $main-title-color;        // было #555
+        font-size: 15px;                
+        color: $main-title-color;  
         line-height: 1.55;
         margin: 0;
         flex: 1;
@@ -893,7 +886,7 @@
         }
     }
 
-    // Левая колонка — один цельный белый блок
+
     &__left {
         background: #fff;
         border-radius: 16px;
@@ -901,8 +894,8 @@
         display: flex;
         flex-direction: column;
         gap: 0;
-        height: 100%; // добавляем
-        box-sizing: border-box; // добавляем
+        height: 100%;
+        box-sizing: border-box;
     }
 
     &__block {
@@ -1005,7 +998,6 @@
         }
     }
 
-    // Правая колонка
     &__right {
         display: flex;
         flex-direction: column;

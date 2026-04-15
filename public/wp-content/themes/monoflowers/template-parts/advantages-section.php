@@ -1,10 +1,4 @@
 <?php
-/**
- * Template part: Секция "Преимущества перетяжки мебели"
- * Подключается в home.php через: get_template_part('template-parts/advantages-section');
- *
- * Данные из ACF Repeater 'advantages' или заглушки.
- */
 
 $advantages = get_field('advantages') ?: [];
 
@@ -38,7 +32,6 @@ $adv_overlay_text = get_field('advantages_overlay_text') ?: 'Компания Rt
     <div class="container">
         <div class="advantages__inner">
 
-            <!-- Левая карточка с фото и overlay-текстом -->
             <div class="advantages__image-card">
                 <img src="<?php echo $adv_img_url; ?>" alt="Преимущества перетяжки мебели" class="advantages__img">
                 <div class="advantages__overlay">
@@ -47,7 +40,6 @@ $adv_overlay_text = get_field('advantages_overlay_text') ?: 'Компания Rt
                 </div>
             </div>
 
-            <!-- Правая: список преимуществ -->
             <div class="advantages__list">
                 <?php foreach ($advantages_list as $adv) :
                     $title = is_array($adv) ? esc_html($adv['title'] ?? '') : esc_html($adv);

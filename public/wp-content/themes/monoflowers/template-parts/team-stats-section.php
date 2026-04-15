@@ -1,17 +1,4 @@
 <?php
-/**
- * Template part: Секция "Наши преимущества" — 4 статистических блока
- * Подключается через: get_template_part('template-parts/team-stats-section')
- *
- * ACF-поля (страница Команда):
- *   team_stats — Repeater:
- *     value — Text — Число / значение (например «0 руб», «от 1 дня»)
- *     label — Text — Подпись (например «Вывоз и доставка»)
- *
- *   team_stats_text1 — Textarea — Левый абзац под блоками
- *   team_stats_text2 — Textarea — Правый абзац под блоками
- */
-
 $stats = get_field('team_stats') ?: [
     ['value' => '0 руб',   'label' => 'Вывоз и доставка'],
     ['value' => 'от 1 дня','label' => 'Сроки перетяжки'],

@@ -14,7 +14,6 @@
                     <div class="hero__slide-bg" style="background-image: url('<?php echo esc_url($slide_background['url']); ?>');"></div>
                     <?php endif; ?>
 
-                    <!-- Контент слайда -->
                     <div class="hero__content">
                         <?php if( $slide_title ): ?>
                         <h1 class="hero__title"><?php echo esc_html($slide_title); ?></h1>
@@ -41,7 +40,6 @@
             </div>
             
             <div class="hero-pagination swiper-pagination"></div>
-                <!-- Блок преимуществ внизу hero -->
                 <div class="hero__advantages">
                     <div class="container">
                         <div class="hero__advantages-grid">
@@ -71,7 +69,6 @@
                 </div>
         </div>
         <?php else: ?>
-        <!-- Fallback если нет ACF слайдов -->
         <div class="hero__slide">
             <div class="hero__slide-bg"></div>
             <div class="hero__content">

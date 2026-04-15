@@ -1,8 +1,4 @@
 <?php
-/**
- * Template part: Секция "Наши услуги"
- * "Больше услуг" → ведёт на страницу с шаблоном "Услуги" (page-services.php)
- */
 
 $services = new WP_Query([
     'post_type'      => 'service',
@@ -11,7 +7,6 @@ $services = new WP_Query([
     'order'          => 'ASC',
 ]);
 
-// Ищем страницу с шаблоном "Услуги"
 $services_page = get_pages(['meta_key' => '_wp_page_template', 'meta_value' => 'page-services.php']);
 $services_page_url = !empty($services_page) ? get_permalink($services_page[0]->ID) : get_post_type_archive_link('service');
 ?>
@@ -57,7 +52,6 @@ $services_page_url = !empty($services_page) ? get_permalink($services_page[0]->I
                 <?php endforeach; ?>
             <?php endif; ?>
 
-            <!-- Карточка "Больше услуг" — ведёт на страницу Услуги -->
             <a href="<?php echo esc_url($services_page_url); ?>" class="service-card service-card--more">
                 <span class="service-card--more__arrow">↗</span>
                 <span class="service-card--more__text">Больше услуг</span>

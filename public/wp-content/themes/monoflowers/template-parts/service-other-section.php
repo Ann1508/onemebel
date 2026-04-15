@@ -1,12 +1,4 @@
 <?php
-/**
- * Template part: Секция "Другие услуги"
- * Image 6: Сетка карточек с фото + названием услуги + "Подробнее"
- * Подключается через: get_template_part('template-parts/service-other-section');
- *
- * Выводит другие услуги из CPT 'service', исключая текущую.
- */
-
 $current_id = get_the_ID();
 
 $other_services = new WP_Query([

@@ -1,11 +1,4 @@
 <?php
-/**
- * Template part: Секция "Как заказать обивку мебели"
- * Подключается в home.php через: get_template_part('template-parts/howtoorder-section');
- *
- * Шаги из ACF Repeater 'order_steps' или заглушки.
- */
-
 $steps = get_field('order_steps') ?: [];
 
 $steps_default = [
@@ -45,7 +38,6 @@ $cta_img_url = $cta_image ? esc_url($cta_image['url']) : get_template_directory_
     <div class="container">
         <div class="howtoorder__inner">
 
-            <!-- Левая колонка -->
             <div class="howtoorder__left">
                 <h2 class="howtoorder__title">Как заказать<br>обивку мебели</h2>
                 <p class="howtoorder__subtitle">В удобное для вас время мы вывезем вашу мебель в цех, вывоз и возврат БЕСПЛАТНО.</p>
@@ -59,7 +51,6 @@ $cta_img_url = $cta_image ? esc_url($cta_image['url']) : get_template_directory_
                 </a>
             </div>
 
-            <!-- Правая колонка: шаги -->
             <div class="howtoorder__steps">
                 <?php foreach ($steps_list as $index => $step) :
                     $num   = str_pad($index + 1, 2, '0', STR_PAD_LEFT);

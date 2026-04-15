@@ -12,7 +12,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 400px; // высота серого фона снизу
+        height: 400px; 
         background-color: $light-bg;
         z-index: 1;
     }
@@ -49,7 +49,7 @@
     }
 
     &__grid-wrap {
-        background-color: transparent; // убираем фон
+        background-color: transparent; 
         padding: 0 0 70px;
         margin-top: -320px;
         position: relative;
@@ -62,7 +62,7 @@
         gap: 10px;
 
         .portfolio__item {
-            aspect-ratio: 1 / 1; // все карточки квадратные
+            aspect-ratio: 1 / 1; 
         }
 
         // 1я — 2я колонка, 1я строка
@@ -363,7 +363,7 @@
 
     &__overlay {
         position: absolute;
-        top: 0;      // было bottom: 0
+        top: 0;     
         bottom: 0;
         left: 0;
         right: 0;
@@ -376,7 +376,7 @@
         );
         display: flex;
         flex-direction: column;
-        justify-content: flex-end; // текст внизу
+        justify-content: flex-end; 
         gap: 10px;
     }
 
@@ -407,7 +407,7 @@
 
     &__item {
         display: flex;
-        align-items: flex-start; // было center
+        align-items: flex-start; 
         justify-content: space-between;
         gap: 20px;
         padding: 20px 0;
@@ -456,7 +456,7 @@
     &__item-spinner {
         width: 18px;
         height: 18px;
-        border: 2px solid rgba(255,255,255,0.4); // светлый на тёмном фоне
+        border: 2px solid rgba(255,255,255,0.4); 
         border-radius: 50%;
         border-top-color: #fff;
         animation: spin 1.5s linear infinite;
@@ -495,7 +495,7 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
-        align-self: stretch; // растягивает на всю высоту
+        align-self: stretch; 
     }
 
     &__title {
@@ -520,17 +520,17 @@
 
     &__cta {
         display: flex;
-        align-items: flex-end; // картинка прижата к низу
+        align-items: flex-end; 
         gap: 14px;
         padding: 12px 14px;
-        padding-top: 0; // убираем отступ сверху
+        padding-top: 0; 
         background-color: #f5f0ec;
         border-radius: 12px;
         text-decoration: none;
         transition: background-color 0.3s ease;
         max-width: 240px;
         margin-top: auto;
-        overflow: visible; // чтобы картинка могла выходить за пределы
+        overflow: visible; 
 
         &:hover {
             background-color: darken(#f5f0ec, 5%);
@@ -538,12 +538,12 @@
     }
 
     &__cta-img {
-        width: 80px;  // было 52px, увеличь
+        width: 80px;  
         height: 80px;
         border-radius: 8px;
         overflow: hidden;
         flex-shrink: 0;
-        margin-top: -20px; // выносим картинку вверх за пределы блока
+        margin-top: -20px; 
 
         img {
             width: 100%;
@@ -582,7 +582,7 @@
 
     &__step-header {
         display: flex;
-        flex-direction: column; // номер сверху, заголовок снизу
+        flex-direction: column;
         gap: 4px;
         margin-bottom: 4px;
     }
@@ -591,7 +591,7 @@
         font-size: 13px;
         color: #777;
         line-height: 1.55;
-        margin: 0; // убери отступ слева
+        margin: 0; 
     }
 
     &__step-num {

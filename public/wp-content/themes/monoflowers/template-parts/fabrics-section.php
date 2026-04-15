@@ -1,13 +1,4 @@
 <?php
-/**
- * Template part: Секция "Ткани для обивки мебели и их образцы" + блок цен
- * Подключается в home.php через: get_template_part('template-parts/fabrics-section');
- *
- * Ткани берутся из ACF-поля (Repeater) "fabrics" на странице,
- * либо показываются заглушки.
- *
- * Цены: CPT 'price_item' или ACF-таблица (см. ниже).
- */
 
 $fabrics = get_field('fabrics') ?: [];
 
@@ -23,7 +14,6 @@ $fabrics_default = [
 
 $fabrics_list = !empty($fabrics) ? $fabrics : $fabrics_default;
 
-// Цены из CPT 'price_item'
 $prices_query = new WP_Query([
     'post_type'      => 'price_item',
     'posts_per_page' => 11,
@@ -41,10 +31,8 @@ $price_tabs = [
 <section class="fabrics">
     <div class="container">
 
-        <!-- Заголовок -->
         <h2 class="fabrics__title">Ткани для обивки мебели<br>и их образцы</h2>
 
-        <!-- Кружки тканей -->
         <div class="fabrics__swatches">
             <?php foreach ($fabrics_list as $fabric) :
                 $img_url = is_array($fabric) && isset($fabric['image']) ? esc_url($fabric['image']['url'] ?? '') : '';
@@ -68,12 +56,10 @@ $price_tabs = [
     </div>
 </section>
 
-<!-- ===== Блок цен ===== -->
 <section class="prices">
     <div class="container">
         <div class="prices__inner">
 
-            <!-- Левая колонка: заголовок + табы + CTA -->
             <div class="prices__left">
                 <h2 class="prices__title">Цены на<br>перетяжку<br>мягкой мебели</h2>
 
@@ -93,7 +79,6 @@ $price_tabs = [
                 <a href="#modal-calc" class="prices__cta js-open-modal">Рассчитать стоимость</a>
             </div>
 
-            <!-- Правая колонка: таблица -->
             <div class="prices__right">
                 <table class="prices__table">
                     <thead>

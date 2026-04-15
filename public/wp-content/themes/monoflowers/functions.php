@@ -294,7 +294,6 @@ function onemebel_register_services_cpt() {
 add_action('init', 'onemebel_register_services_cpt');
 
 
-// --- Портфолио (работы) ---
 function onemebel_register_portfolio_cpt() {
     register_post_type('portfolio', [
         'labels' => [
@@ -317,7 +316,6 @@ function onemebel_register_portfolio_cpt() {
 }
 add_action('init', 'onemebel_register_portfolio_cpt');
 
-// --- Отзывы ---
 function onemebel_register_reviews_cpt() {
     register_post_type('review', [
         'labels' => [
@@ -339,7 +337,6 @@ function onemebel_register_reviews_cpt() {
 }
 add_action('init', 'onemebel_register_reviews_cpt');
 
-// --- Прайс-лист ---
 function onemebel_register_price_cpt() {
     register_post_type('price_item', [
         'labels' => [
@@ -361,7 +358,6 @@ function onemebel_register_price_cpt() {
 }
 add_action('init', 'onemebel_register_price_cpt');
 
-// --- Таксономия: Категории портфолио ---
 function onemebel_register_portfolio_taxonomy() {
     register_taxonomy('portfolio_category', 'portfolio', [
         'labels' => [
@@ -380,5 +376,4 @@ function onemebel_register_portfolio_taxonomy() {
 }
 add_action('init', 'onemebel_register_portfolio_taxonomy');
 
-// AJAX-обработчики модального окна и фильтров
 require get_template_directory() . '/inc/ajax-handlers.php';

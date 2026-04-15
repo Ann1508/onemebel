@@ -20,7 +20,6 @@
 
     function openModal(prefill) {
         if (!modal) return;
-        // Сброс шагов
         step1.style.display = 'block';
         step2.style.display = 'none';
         success.style.display = 'none';

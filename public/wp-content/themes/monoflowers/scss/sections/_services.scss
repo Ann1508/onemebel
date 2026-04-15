@@ -2,7 +2,7 @@
     padding: 60px 0 70px;
     background-color: #fff;
     border-radius: 24px 24px 0 0;
-    margin-top: -20px; // небольшое перекрытие hero снизу
+    margin-top: -20px; 
     position: relative;
     z-index: 2;
 
@@ -41,7 +41,6 @@
     }
 }
 
-// --- Карточка услуги ---
 .service-card {
     display: flex;
     flex-direction: column;
@@ -105,7 +104,6 @@
         flex-shrink: 0;
     }
 
-    // Карточка "Больше услуг"
     &--more {
         background-color: $brown-color;
         display: flex;

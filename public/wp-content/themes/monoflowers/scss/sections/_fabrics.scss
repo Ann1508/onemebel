@@ -4,7 +4,7 @@
 
 .fabrics {
     padding: 60px 0 40px;
-    background-color: $light-bg; // #f5f5f5 или аналог из вашей темы
+    background-color: $light-bg; 
 
     &__title {
         font-family: $mainFont;
@@ -172,7 +172,7 @@
         line-height: 1.55;
         margin: 0;
         max-width: 320px;
-        margin-top: auto; // прижимает note и всё что после него вниз
+        margin-top: auto; 
     }
 
     &__cta {
@@ -207,7 +207,7 @@
         border: none;
 
         thead tr {
-            border-bottom: 1px solid #e0dbd5; // линия только снизу шапки
+            border-bottom: 1px solid #e0dbd5; 
         }
     }
 
@@ -219,7 +219,7 @@
         text-align: left;
         padding: 0 0 14px;
         border-bottom: 1px solid #e0dbd5;
-        border: none; // убираем все границы у th
+        border: none; 
     }
 
     &__row {
@@ -233,10 +233,10 @@
     &__td {
         font-family: $mainFont;
         font-size: 14px;
-        font-weight: 500;        // добавь 500 вместо дефолтного 400
+        font-weight: 500;     
         color: $main-title-color;
         padding: 12px 0;
-        border: none; // убирает все остальные контуры
+        border: none; 
 
         &--right {
             text-align: right;

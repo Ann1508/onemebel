@@ -1,18 +1,4 @@
 <?php
-/**
- * Template part: Секция "Закажи обратный звонок" — форма + фото
- * Подключается через: get_template_part('template-parts/team-callback-section')
- *
- * ACF-поля (страница Команда):
- *   team_callback_image — Image — Фоновое фото левой части
- *
- * ACF Options (Настройки сайта):
- *   phone     — Телефон
- *   telegram  — Ссылка Telegram
- *   viber     — Ссылка Viber
- *   whatsapp  — Ссылка WhatsApp
- */
-
 $callback_image   = get_field('team_callback_image');
 $callback_img_url = $callback_image
     ? esc_url($callback_image['url'])
@@ -28,7 +14,6 @@ $wa    = get_field('whatsapp', 'option');
     <div class="container">
         <div class="team-callback__inner">
 
-            <!-- Левая часть: фото + контакты -->
             <div class="team-callback__left" style="background-image: url('<?php echo $callback_img_url; ?>')">
                 <div class="team-callback__left-overlay">
 
@@ -72,7 +57,6 @@ $wa    = get_field('whatsapp', 'option');
                 </div>
             </div>
 
-            <!-- Правая часть: форма -->
             <div class="team-callback__right">
 
                 <div class="team-callback__form-header">
