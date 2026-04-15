@@ -1,8 +1,7 @@
 <?php
 /**
  * Template part: Секция "Наши услуги"
- * Подключается в home.php через: get_template_part('template-parts/services-section');
- * Услуги берутся из CPT 'service', зарегистрированного в functions.php
+ * "Больше услуг" → ведёт на страницу с шаблоном "Услуги" (page-services.php)
  */
 
 $services = new WP_Query([
@@ -11,6 +10,10 @@ $services = new WP_Query([
     'orderby'        => 'menu_order',
     'order'          => 'ASC',
 ]);
+
+// Ищем страницу с шаблоном "Услуги"
+$services_page = get_pages(['meta_key' => '_wp_page_template', 'meta_value' => 'page-services.php']);
+$services_page_url = !empty($services_page) ? get_permalink($services_page[0]->ID) : get_post_type_archive_link('service');
 ?>
 
 <section class="services">
@@ -35,7 +38,6 @@ $services = new WP_Query([
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php else : ?>
-                <!-- Заглушки если нет записей в админке -->
                 <?php
                 $placeholders = [
                     'Перетяжка диванов',
@@ -55,8 +57,8 @@ $services = new WP_Query([
                 <?php endforeach; ?>
             <?php endif; ?>
 
-            <!-- Карточка "Больше услуг" — всегда последняя -->
-            <a href="<?php echo get_post_type_archive_link('service'); ?>" class="service-card service-card--more">
+            <!-- Карточка "Больше услуг" — ведёт на страницу Услуги -->
+            <a href="<?php echo esc_url($services_page_url); ?>" class="service-card service-card--more">
                 <span class="service-card--more__arrow">↗</span>
                 <span class="service-card--more__text">Больше услуг</span>
             </a>

@@ -1,13 +1,7 @@
 <?php
 /**
  * Template part: Герой-секция страницы услуги
- * Image 1: Заголовок, описание, кнопка слева + фото справа
- * Подключается через: get_template_part('template-parts/service-hero-section');
- *
- * ACF поля (на странице):
- *  - service_hero_title   (текст)
- *  - service_hero_text    (textarea)
- *  - service_hero_image   (image)
+ * ИСПРАВЛЕНО: кнопка использует класс service-hero__btn (коричневая, не зелёная)
  */
 
 $title      = get_field('service_hero_title')   ?: get_the_title();
@@ -16,7 +10,6 @@ $hero_image = get_field('service_hero_image');
 $img_url    = $hero_image ? esc_url($hero_image['url']) : get_template_directory_uri() . '/assets/img/service-hero-default.jpg';
 $img_alt    = $hero_image ? esc_attr($hero_image['alt']) : esc_attr($title);
 
-// Хлебные крошки
 $parent = get_post_parent();
 ?>
 
@@ -42,9 +35,10 @@ $parent = get_post_parent();
             <div class="service-hero__left">
                 <h1 class="service-hero__title"><?php echo esc_html($title); ?></h1>
                 <p class="service-hero__text"><?php echo esc_html($text); ?></p>
-                <a href="#modal-calc" class="btn service-hero__btn js-open-modal">
-                    Рассчитать стоимость
-                </a>
+                <!-- НЕ используем класс .btn (он зелёный $Primary), используем .service-hero__btn -->
+                <button class="service-hero__btn js-open-modal">
+                    РАССЧИТАТЬ СТОИМОСТЬ
+                </button>
             </div>
 
             <!-- Правая: фотография -->

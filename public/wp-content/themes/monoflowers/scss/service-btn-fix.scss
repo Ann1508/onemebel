@@ -1,0 +1,70 @@
+// =============================================
+// ИСПРАВЛЕНИЕ: кнопки на страницах услуг — КОРИЧНЕВЫЕ
+// Добавить в конец scss/sections/_service-page.scss
+// =============================================
+
+// Hero-кнопка (главная секция услуги)
+.service-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background-color: $brown-color !important; // #462b25 — коричневый
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    font-family: $mainFont;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: max-content;
+
+    &:hover {
+        background-color: darken(#462b25, 8%) !important;
+        color: #fff !important;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+// Кнопки "Рассчитать стоимость" в секции цен услуги — коричневые
+.service-prices__btn {
+    background-color: $brown-color !important;
+    color: #fff !important;
+    border-radius: 30px;
+
+    &:hover {
+        background-color: darken(#462b25, 8%) !important;
+    }
+}
+
+// Кнопки в svc-advantages форме
+.svc-advantages__form-submit {
+    background-color: $brown-color !important;
+    color: #fff !important;
+
+    &:hover {
+        background-color: darken(#462b25, 8%) !important;
+    }
+}
+
+// Глобальный сброс зелёного $Primary для кнопок на страницах услуг
+// Если .btn используется в single-service — перебиваем цвет
+.single-service .btn,
+.service-hero .btn,
+.service-prices .btn {
+    background-color: $brown-color !important;
+    color: #fff !important;
+
+    &:hover {
+        background-color: darken(#462b25, 8%) !important;
+        border-color: $brown-color !important;
+    }
+}

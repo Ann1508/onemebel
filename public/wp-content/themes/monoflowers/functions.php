@@ -376,3 +376,6 @@ function onemebel_register_portfolio_taxonomy() {
     ]);
 }
 add_action('init', 'onemebel_register_portfolio_taxonomy');
+
+// AJAX-обработчики модального окна и фильтров
+require get_template_directory() . '/inc/ajax-handlers.php';

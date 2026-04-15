@@ -42,7 +42,6 @@
                     <div class="footer__socials">
                         <a href="<?php the_field('telegram', 'option'); ?>" 
                            class="footer__social-link" target="_blank">
-                            <!-- Telegram -->
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 
                                 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.56-.46.7-.93.43l-2.57-1.9-1.24 
@@ -53,7 +52,6 @@
                         </a>
                         <a href="<?php the_field('viber', 'option'); ?>" 
                            class="footer__social-link" target="_blank">
-                            <!-- Viber -->
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 
                                 5.07L2 22l5.1-1.34C8.5 21.52 10.22 22 12 22c5.52 0 10-4.48 
@@ -67,7 +65,6 @@
                         </a>
                         <a href="<?php the_field('whatsapp', 'option'); ?>" 
                            class="footer__social-link" target="_blank">
-                            <!-- WhatsApp -->
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 
                                 5.07L2 22l5.1-1.34C8.5 21.52 10.22 22 12 22c5.52 0 
@@ -87,7 +84,7 @@
                     </a>
 
                     <!-- Кнопка -->
-                    <a href="#modal-calc" class="footer__cta js-open-modal">
+                    <a href="#" class="footer__cta js-open-modal">
                         Бесплатная консультация
                     </a>
 
@@ -109,6 +106,9 @@
         </div>
     </div>
 </footer>
+
+<!-- МОДАЛЬНОЕ ОКНО — подключается один раз в футере -->
+<?php get_template_part('template-parts/modal-calc'); ?>
 
 <?php wp_footer(); ?>
 </body>
