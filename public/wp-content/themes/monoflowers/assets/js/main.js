@@ -1,14 +1,5 @@
-/**
- * main.js — ONEMEBEL
- * Handles: modal, portfolio filter, FAQ, mobile menu, forms
- */
-
 (function () {
     'use strict';
-
-    /* =============================================
-       1. МОДАЛЬНОЕ ОКНО «РАССЧИТАТЬ СТОИМОСТЬ»
-    ============================================= */
 
     const overlay   = document.getElementById('modal-calc-overlay');
     const modal     = document.getElementById('modal-calc');
@@ -21,7 +12,6 @@
     const submitBtn = document.getElementById('mc-submit-btn');
     const closeSuccessBtn = document.getElementById('mc-close-success');
 
-    // Поля из формы команды / контакты (предзаполнение)
     const externalFields = {
         city:  ['mc-city'],
         name:  ['mc-name'],
@@ -35,7 +25,6 @@
         step2.style.display = 'none';
         success.style.display = 'none';
 
-        // Предзаполнение если переданы данные
         if (prefill) {
             if (prefill.city)  document.getElementById('mc-city').value  = prefill.city  || '';
             if (prefill.name)  document.getElementById('mc-name').value  = prefill.name  || '';
@@ -54,12 +43,10 @@
         document.body.style.overflow = '';
     }
 
-    // Открытие по кнопкам .js-open-modal и .btn-open-modal
     document.querySelectorAll('.js-open-modal, .btn-open-modal').forEach(function (btn) {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
 
-            // Собираем данные из форм на странице (если есть)
             var prefill = {};
             var pageCity  = document.getElementById('tc-city')  || document.querySelector('[name="city"]:not(#mc-city)');
             var pageName  = document.getElementById('tc-name')  || document.querySelector('[name="name"]:not(#mc-name)');
@@ -82,7 +69,6 @@
         if (e.key === 'Escape') closeModal();
     });
 
-    // Шаг 1 → Шаг 2
     if (nextBtn) {
         nextBtn.addEventListener('click', function () {
             step1.style.display = 'none';
@@ -90,8 +76,6 @@
             modal.scrollTop = 0;
         });
     }
-
-    // Шаг 2 → Шаг 1
     if (backBtn) {
         backBtn.addEventListener('click', function () {
             step2.style.display = 'none';
@@ -100,13 +84,11 @@
         });
     }
 
-    // Отправка формы (AJAX)
     if (submitBtn) {
         submitBtn.addEventListener('click', function () {
             var nonce = document.getElementById('mc-nonce');
             if (!nonce) return;
 
-            // Собираем данные шага 1
             var furnitureType = document.getElementById('mc-furniture-type')  ? document.getElementById('mc-furniture-type').value : '';
             var furnitureSize = document.getElementById('mc-furniture-size')  ? document.getElementById('mc-furniture-size').value : '';
             var fluffiness    = document.getElementById('mc-fluffiness')       ? document.getElementById('mc-fluffiness').value : '';
@@ -117,7 +99,6 @@
                 fabrics.push(cb.value);
             });
 
-            // Данные шага 2
             var city    = document.getElementById('mc-city').value.trim();
             var name    = document.getElementById('mc-name').value.trim();
             var phone   = document.getElementById('mc-phone').value.trim();
@@ -128,7 +109,6 @@
                 contactMethods.push(cb.value);
             });
 
-            // Валидация — хотя бы имя и телефон
             if (!name || !phone) {
                 alert('Пожалуйста, укажите имя и телефон.');
                 return;
@@ -174,9 +154,6 @@
         });
     }
 
-    /* =============================================
-       2. МОБИЛЬНОЕ МЕНЮ
-    ============================================= */
 
     var menuBtn     = document.querySelector('.menu-btn');
     var mobileMenu  = document.querySelector('.mobile-menu');
@@ -201,17 +178,12 @@
     if (menuClose)  menuClose.addEventListener('click', closeMobileMenu);
     if (pageOverlay) pageOverlay.addEventListener('click', closeMobileMenu);
 
-    /* =============================================
-       3. ПОРТФОЛИО: AJAX-ФИЛЬТР
-    ============================================= */
 
     var filterBtns = document.querySelectorAll('.portfolio-page__filter-btn');
     var portfolioGrid = document.getElementById('portfolio-grid');
 
     filterBtns.forEach(function (btn) {
         btn.addEventListener('click', function (e) {
-            // Если это <a> — оставляем стандартное поведение для SEO
-            // Для JS-фильтра используем data-атрибуты (добавляются ниже)
             if (!btn.dataset.cat) return;
             e.preventDefault();
 
@@ -235,7 +207,6 @@
                 portfolioGrid.innerHTML = html;
                 portfolioGrid.style.opacity = '1';
 
-                // Повторно вешаем событие клика на ссылки карточек
                 attachPortfolioCardClicks();
             })
             .catch(function () {
@@ -245,12 +216,8 @@
     });
 
     function attachPortfolioCardClicks() {
-        // Ссылки уже есть в HTML — ничего дополнительного не требуется
     }
 
-    /* =============================================
-       4. FAQ АККОРДЕОН
-    ============================================= */
 
     if (!window.__faqInitialized) {
         window.__faqInitialized = true;
@@ -280,9 +247,6 @@
         });
     }
 
-    /* =============================================
-       5. HERO SWIPER
-    ============================================= */
 
     if (typeof Swiper !== 'undefined') {
         var heroSwiper = document.querySelector('.hero-swiper');
@@ -298,10 +262,6 @@
         }
     }
 
-    /* =============================================
-       6. STICKY HEADER
-    ============================================= */
-
     var header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', function () {
@@ -313,9 +273,6 @@
         });
     }
 
-    /* =============================================
-       7. ЦЕНЫ: ТАБЫ
-    ============================================= */
 
     var priceTabs = document.querySelectorAll('.prices__tab');
     priceTabs.forEach(function (tab) {
@@ -349,11 +306,7 @@
         });
     });
 
-    /* =============================================
-       8. РАЗДЕЛ КОМАНДЫ: передача данных в модал
-    ============================================= */
 
-    // Кнопка "Рассчитать стоимость" в блоке team-callback
     var teamCallbackForm = document.querySelector('.team-callback__form');
     var teamSubmitBtn    = teamCallbackForm ? teamCallbackForm.querySelector('[type="submit"]') : null;
 
@@ -368,10 +321,6 @@
             openModal(prefill);
         });
     }
-
-    /* =============================================
-       9. РАЗДЕЛ УСЛУГИ: форма → модал
-    ============================================= */
 
     var svcForm    = document.querySelector('.svc-advantages__form');
     var svcSubmit  = svcForm ? svcForm.querySelector('.svc-advantages__form-submit') : null;
