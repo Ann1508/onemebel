@@ -357,3 +357,22 @@ function onemebel_register_price_cpt() {
     ]);
 }
 add_action('init', 'onemebel_register_price_cpt');
+
+// --- Таксономия: Категории портфолио ---
+function onemebel_register_portfolio_taxonomy() {
+    register_taxonomy('portfolio_category', 'portfolio', [
+        'labels' => [
+            'name'              => 'Категории работ',
+            'singular_name'     => 'Категория',
+            'add_new_item'      => 'Добавить категорию',
+            'edit_item'         => 'Редактировать категорию',
+            'all_items'         => 'Все категории',
+        ],
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'rewrite'           => ['slug' => 'portfolio-cat'],
+    ]);
+}
+add_action('init', 'onemebel_register_portfolio_taxonomy');

@@ -98,16 +98,29 @@
           }
         }
 
-        .header__social_net {
-          display: flex;
-          flex-direction: row;
-          gap: 0.5rem;
+.header__social_net {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-          svg {
-            width: 2.5rem;
-            height: 2.5rem;
-          }
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none; // убираем любой фон
+        padding: 0;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.7;
         }
+    }
+
+    // Белые иконки на главной странице
+    &.header-soc-net a svg path {
+        fill: #fff;
+    }
+}
 
         .header__phone__hours {
           display: flex;

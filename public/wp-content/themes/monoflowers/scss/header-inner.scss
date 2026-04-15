@@ -1,0 +1,94 @@
+// =============================================
+// Дополнение к header.scss
+// Добавьте этот код в конец вашего
+// scss/header.scss
+// =============================================
+
+// Белая шапка для внутренних страниц
+.header.inner-page {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+    .header__menu li a {
+        color: $main-title-color;
+
+        &:hover {
+            color: $brown-color;
+        }
+    }
+
+    .header__phone__hours {
+        color: $main-title-color;
+
+        a {
+            color: $main-title-color;
+            font-weight: 600;
+        }
+    }
+
+    .header__social_net svg path {
+        fill: $brown-color;
+    }
+
+    // Кнопка "Рассчитать стоимость" — видна только на внутренних страницах
+    .header__calc-btn {
+        display: flex;
+    }
+
+    // Бургер на тёмном фоне → перекрашиваем в тёмный
+    .menu-btn {
+        background-color: $brown-color;
+
+        svg path {
+            stroke: #fff;
+        }
+    }
+}
+
+// Кнопка "Рассчитать стоимость" в хедере
+.header__calc-btn {
+    display: none; // скрыта на главной, показывается через .inner-page
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: $brown-color;
+    color: #fff;
+    border-radius: 8px;
+    font-family: $mainFont;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    border: none;
+
+    &:hover {
+        background-color: darken(#462b25, 8%);
+        color: #fff;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        display: none !important; // скрываем на планшете — есть в моб.меню
+    }
+}
+
+// Показываем бургер на всех внутренних страницах начиная с планшета
+.inner-page .menu-btn {
+    @media screen and (max-width: $tableWidth) {
+        display: flex;
+    }
+}
+
+// Скрываем desktop-меню и контакты на планшете/мобиле для всех страниц
+@media screen and (max-width: $tableWidth) {
+    .header__menu,
+    .header__contacts {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+}

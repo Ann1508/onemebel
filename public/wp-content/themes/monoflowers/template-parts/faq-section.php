@@ -1,13 +1,28 @@
 <?php
 /**
- * Template part: Секция "Часто задаваемые вопросы про перетяжку"
- * Подключается в home.php через: get_template_part('template-parts/faq-section');
+ * Template part: Секция "Часто задаваемые вопросы"
+ * Подключается через: get_template_part('template-parts/faq-section')
  *
- * Вопросы из ACF Repeater 'faq_items' или заглушки.
+ * Переиспользуется на:
+ *   - Главной странице (home.php)
+ *   - Странице Команда (page-team.php)
+ *   - Любой другой странице
+ *
+ * ACF-поля текущей страницы:
+ *   faq_title — Text     — Заголовок секции
+ *               Если не заполнено — «Часто задаваемые вопросы про перетяжку»
+ *   faq_items — Repeater — Вопросы и ответы:
+ *     question — Text     — Вопрос
+ *     answer   — Textarea — Ответ
  */
 
+// Заголовок: берём из ACF текущей страницы, либо дефолтный
+$faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы про перетяжку';
+
+// Вопросы: берём из ACF текущей страницы
 $faqs = get_field('faq_items') ?: [];
 
+// Заглушки если ничего не задано
 $faqs_default = [
     [
         'question' => 'Как заказать обивку мебели в Минске?',
@@ -26,7 +41,8 @@ $faqs_list = !empty($faqs) ? $faqs : $faqs_default;
 
 <section class="faq">
     <div class="container">
-        <h2 class="faq__title">Часто задаваемые вопросы<br>про перетяжку</h2>
+
+        <h2 class="faq__title"><?php echo esc_html($faq_title); ?></h2>
 
         <div class="faq__list">
             <?php foreach ($faqs_list as $index => $item) :
@@ -53,11 +69,16 @@ $faqs_list = !empty($faqs) ? $faqs : $faqs_default;
             </div>
             <?php endforeach; ?>
         </div>
+
     </div>
 </section>
 
 <script>
 (function() {
+    // Находим все кнопки FAQ на странице (защита от дублирования если секция подключена дважды)
+    if (window.__faqInitialized) return;
+    window.__faqInitialized = true;
+
     document.querySelectorAll('.faq__question').forEach(function(btn) {
         btn.addEventListener('click', function() {
             var item   = this.closest('.faq__item');
@@ -69,12 +90,9 @@ $faqs_list = !empty($faqs) ? $faqs : $faqs_default;
                 i.classList.remove('faq__item--open');
                 var a = i.querySelector('.faq__answer');
                 if (a) a.hidden = true;
-                var btn2 = i.querySelector('.faq__question');
-                btn2.setAttribute('aria-expanded', 'false');
-                var minus = i.querySelector('.faq__toggle-minus');
-                var plus  = i.querySelector('.faq__toggle-plus');
-                if (minus) minus.textContent = '+';
-                if (minus) minus.className = 'faq__toggle-plus';
+                i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+                var t = i.querySelector('.faq__toggle-plus, .faq__toggle-minus');
+                if (t) { t.textContent = '+'; t.className = 'faq__toggle-plus'; }
             });
 
             // Открываем текущий если был закрыт

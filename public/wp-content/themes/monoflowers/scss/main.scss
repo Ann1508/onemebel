@@ -4,6 +4,7 @@
 @import "./utils/reset";
 
 @import "header";
+@import "header-inner";
 @import "footer";
 @import "modal";
 @import "page-content";
@@ -19,6 +20,8 @@
 @import "sections/fabrics";
 @import "sections/portfolio-reviews-etc";
 @import "sections/process-about";
+@import "sections/pages";  
+@import "sections/service-page";
 
 html {
   line-height: $mainLineHeight;
