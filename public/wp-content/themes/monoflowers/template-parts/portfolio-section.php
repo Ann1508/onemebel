@@ -34,7 +34,7 @@ $portfolio_url = !empty($portfolio_pages) ? get_permalink($portfolio_pages[0]->I
                         $is_before = get_post_meta(get_the_ID(), 'is_before', true);
                 ?>
                 <!-- Карточка ведёт на страницу отдельной работы -->
-                <a href="<?php the_permalink(); ?>" class="portfolio__item">
+                <a href="<?php echo esc_url($portfolio_url); ?>" class="portfolio__item">
                     <?php if ($thumb) : ?>
                     <img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title(); ?>" class="portfolio__img">
                     <?php endif; ?>

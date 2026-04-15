@@ -147,6 +147,7 @@ function monoflowers_scripts() {
 
 	wp_enqueue_script( 'monoflowers-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', false, null, true );
     wp_enqueue_script( 'jquery' );
@@ -154,6 +155,8 @@ function monoflowers_scripts() {
     wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/assets/libs/Swiper/swiper-bundle.min.js', array(), '1.1', true );
 
     wp_enqueue_script( 'monoflowers-main-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.1', true );
+	
+	wp_localize_script( 'monoflowers-main-script', 'ajaxurl', admin_url('admin-ajax.php') );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
